@@ -1,22 +1,48 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import QRCode from 'react-native-qrcode-svg';
+import UserQR from './screens/UserQR';
+import Home from './screens/Home';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+
 
 export default function App() {
 
-  let logoFromFile = require('./assets/trainLogo.png');
+  const Tab = createBottomTabNavigator();
 
   return (
-    <View style={styles.container}>
-      <QRCode
-        value="981302052V"
-        size={200}
-        color='black'
-        backgroundColor='white'
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
 
-        logo={logoFromFile}
-      />
-    </View>
+          if (route.name === 'Home') {
+            iconName = focused ? 'home-outline' : 'home-outline';
+          } else if (route.name === 'UserQR') {
+            iconName = focused ? 'qr-code-outline' : 'qr-code-outline';
+          } else if (route.name === 'Contact') {
+            iconName = focused ? 'megaphone-outline' : 'megaphone-outline';
+          }
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+
+        headerShown: false
+      })}
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+        }}
+
+      >
+        <Tab.Screen name="Home" component={Home}
+        />
+        <Tab.Screen name="UserQR" component={UserQR}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+
   );
 }
 
@@ -26,5 +52,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }, text: {
+    marginBottom: 10,
+    fontSize: 20
+  }
 });
