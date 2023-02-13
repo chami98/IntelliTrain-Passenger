@@ -1,11 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
 
 export default function App() {
+
+  let logoFromFile = require('./assets/trainLogo.png');
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <QRCode
+        value="981302052V"
+        size={200}
+        color='black'
+        backgroundColor='white'
+
+        logo={logoFromFile}
+      />
     </View>
   );
 }
