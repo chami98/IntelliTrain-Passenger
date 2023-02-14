@@ -3,18 +3,22 @@ import { StyleSheet, Text, View } from 'react-native';
 import UserQR from './screens/UserQR';
 import Home from './screens/Home';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Login from './screens/Login';
+
 
 
 
 export default function App() {
 
   const Tab = createBottomTabNavigator();
+  const Stack = createNativeStackNavigator();
 
   return (
     <NavigationContainer>
-      <Tab.Navigator screenOptions={({ route }) => ({
+      {/* <Tab.Navigator screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -40,7 +44,12 @@ export default function App() {
         />
         <Tab.Screen name="UserQR" component={UserQR}
         />
-      </Tab.Navigator>
+      </Tab.Navigator> */}
+
+      <Stack.Navigator>
+        <Stack.Screen name='Login' component={Login} />
+        <Stack.Screen name='Home' component={Home} />
+      </Stack.Navigator>
     </NavigationContainer>
 
   );
