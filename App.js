@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Login from './screens/Login';
+import HomeNavigator from './navigators/HomeNavigator';
 
 
 
@@ -47,8 +48,10 @@ export default function App() {
       </Tab.Navigator> */}
 
       <Stack.Navigator>
-        <Stack.Screen name='Login' component={Login} />
-        <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />
+        <Stack.Screen options={{ headerShown: false }} name='Home' component={Home} />
+        <Stack.Screen options={{ headerShown: false }} name='HomeNavigator' component={HomeNavigator} />
+
       </Stack.Navigator>
     </NavigationContainer>
 
