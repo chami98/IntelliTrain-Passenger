@@ -8,6 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Login from './screens/Login';
 import HomeNavigator from './navigators/HomeNavigator';
+import Signup from './screens/Signup';
 
 
 
@@ -49,9 +50,9 @@ export default function App() {
 
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false }} name='Login' component={Login} />
+        <Stack.Screen options={{ headerShown: false }} name='Signup' component={Signup} />
         <Stack.Screen options={{ headerShown: false }} name='Home' component={Home} />
         <Stack.Screen options={{ headerShown: false }} name='HomeNavigator' component={HomeNavigator} />
-
       </Stack.Navigator>
     </NavigationContainer>
 
