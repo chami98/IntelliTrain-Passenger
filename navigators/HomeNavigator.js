@@ -6,8 +6,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
-const HomeNavigator = () => {
+const HomeNavigator = ({ route }) => {
     const Tab = createBottomTabNavigator();
+    const { email } = route.params;
+
     return (
 
         <Tab.Navigator screenOptions={({ route }) => ({
@@ -34,7 +36,7 @@ const HomeNavigator = () => {
         >
             <Tab.Screen name="Home" component={Home}
             />
-            <Tab.Screen name="UserQR" component={UserQR}
+            <Tab.Screen name="UserQR" component={UserQR} initialParams={{ "email": email }}
             />
         </Tab.Navigator>
 

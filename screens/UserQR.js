@@ -5,17 +5,21 @@ import QRCode from 'react-native-qrcode-svg';
 let logoFromFile = require('../assets/trainLogo.png');
 
 
-const UserQR = () => {
+const UserQR = ({ route }) => {
+
+    const { email } = route.params;
+
     return (
         <View style={styles.container}>
             <Text style={styles.text}>My QR code</Text>
             <QRCode
-                value="98102052V"
+                value={email}
                 size={300}
                 color='black'
                 backgroundColor='white'
                 logo={logoFromFile}
             />
+            <Text style={styles.text}>{email}</Text>
         </View>
 
     );

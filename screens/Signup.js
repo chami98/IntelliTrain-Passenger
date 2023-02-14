@@ -5,9 +5,13 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from '@firebase/app';
 import { firebaseConfig } from '../config/firebaseConfig';
 import { Alert } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 
-const Signup = ({ navigation }) => {
+const Signup = () => {
+
+    const navigation = useNavigation();
+
 
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = useState("");
@@ -20,6 +24,7 @@ const Signup = ({ navigation }) => {
             .then((userCredential) => {
                 console.log('Account created!');
                 console.log(userCredential.user)
+                const user = userCredential.user;
                 navigation.navigate('HomeNavigator')
             })
             .catch((error) => {
