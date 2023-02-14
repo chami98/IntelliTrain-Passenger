@@ -70,7 +70,7 @@ const Login = ({ navigation }) => {
                                 Forget Password?
                             </Link>
                         </FormControl>
-                        <Button onPress={handleSignUp} mt="2" colorScheme="indigo">
+                        <Button onPress={handleSignIn} mt="2" colorScheme="indigo">
                             Sign in
                         </Button>
                         <HStack mt="6" justifyContent="center">

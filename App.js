@@ -1,11 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View } from 'react-native';
-import UserQR from './screens/UserQR';
 import Home from './screens/Home';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import Login from './screens/Login';
 import HomeNavigator from './navigators/HomeNavigator';
 import Signup from './screens/Signup';
