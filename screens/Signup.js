@@ -25,7 +25,7 @@ const Signup = () => {
                 console.log('Account created!');
                 console.log(userCredential.user)
                 const user = userCredential.user;
-                navigation.navigate('HomeNavigator')
+                navigation.navigate('HomeNavigator', { "email": email })
             })
             .catch((error) => {
                 console.log(error)
