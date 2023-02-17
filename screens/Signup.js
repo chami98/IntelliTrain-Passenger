@@ -6,13 +6,14 @@ import { initializeApp } from '@firebase/app';
 import { firebaseConfig } from '../config/firebaseConfig';
 import { Alert } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import axios from "axios";
 
 
 const Signup = () => {
 
+    const baseURL = 'https://us-central1-intellitrain-528b5.cloudfunctions.net/intelliTrain/';
+
     const navigation = useNavigation();
-
-
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = useState("");
 
@@ -23,8 +24,8 @@ const Signup = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 console.log('Account created!');
-                console.log(userCredential.user)
-                const user = userCredential.user;
+                const accessToken = { "token": userCredential.user.accessToken }
+                axios.post(`${baseURL}signup`, accessToken);
                 navigation.navigate('HomeNavigator', { "email": email })
             })
             .catch((error) => {
