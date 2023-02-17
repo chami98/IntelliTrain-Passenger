@@ -1,6 +1,7 @@
 import { StyleSheet, } from 'react-native';
 import UserQR from '../screens/UserQR';
 import Home from '../screens/Home';
+import Wallet from '../screens/Wallet';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -20,8 +21,8 @@ const HomeNavigator = ({ route }) => {
                     iconName = focused ? 'home-outline' : 'home-outline';
                 } else if (route.name === 'UserQR') {
                     iconName = focused ? 'qr-code-outline' : 'qr-code-outline';
-                } else if (route.name === 'Contact') {
-                    iconName = focused ? 'megaphone-outline' : 'megaphone-outline';
+                } else if (route.name === 'Wallet') {
+                    iconName = focused ? 'wallet-outline' : 'wallet-outline';
                 }
                 return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -37,6 +38,8 @@ const HomeNavigator = ({ route }) => {
             <Tab.Screen name="Home" component={Home}
             />
             <Tab.Screen name="UserQR" component={UserQR} initialParams={{ "email": email }}
+            />
+            <Tab.Screen name="Wallet" component={Wallet}
             />
         </Tab.Navigator>
 

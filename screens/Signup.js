@@ -23,7 +23,6 @@ const Signup = () => {
     const handleSignUp = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log('Account created!');
                 const accessToken = { "token": userCredential.user.accessToken }
                 axios.post(`${baseURL}signup`, accessToken);
                 navigation.navigate('HomeNavigator', { "email": email })
