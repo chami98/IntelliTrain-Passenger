@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Button, Modal, FormControl, Input, Center, NativeBaseProvider } from "native-base";
+import { Button, Modal, FormControl, Input, Center, NativeBaseProvider, Stack, VStack } from "native-base";
 const CreditCardModal = ({ showModal, setShowModal }) => {
     return (
         <NativeBaseProvider>
@@ -9,15 +9,19 @@ const CreditCardModal = ({ showModal, setShowModal }) => {
                     <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
                         <Modal.Content maxWidth="400px">
                             <Modal.CloseButton />
-                            <Modal.Header>Contact Us</Modal.Header>
+                            <Modal.Header>TOP UP DIGITAL WALLET</Modal.Header>
                             <Modal.Body>
-                                <FormControl>
-                                    <FormControl.Label>Name</FormControl.Label>
-                                    <Input />
+                                <FormControl >
+                                    <Input placeholder='AMOUNT' keyboardType='numeric' />
                                 </FormControl>
                                 <FormControl mt="3">
-                                    <FormControl.Label>Email</FormControl.Label>
-                                    <Input />
+                                    <Input placeholder='CARD NUMBER' keyboardType='numeric' />
+                                </FormControl>
+                                <FormControl mt="3">
+                                    <Input placeholder='EXPIRY' keyboardType='numeric' />
+                                </FormControl>
+                                <FormControl mt="3">
+                                    <Input placeholder='CVC' keyboardType='numeric' />
                                 </FormControl>
                             </Modal.Body>
                             <Modal.Footer>
@@ -30,7 +34,7 @@ const CreditCardModal = ({ showModal, setShowModal }) => {
                                     <Button onPress={() => {
                                         setShowModal(false);
                                     }}>
-                                        Save
+                                        PAY
                                     </Button>
                                 </Button.Group>
                             </Modal.Footer>
