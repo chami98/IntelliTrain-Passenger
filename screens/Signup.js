@@ -14,6 +14,9 @@ const Signup = () => {
     const baseURL = 'https://us-central1-intellitrain-528b5.cloudfunctions.net/intelliTrain/';
 
     const navigation = useNavigation();
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = useState("");
 
@@ -23,8 +26,8 @@ const Signup = () => {
     const handleSignUp = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const accessToken = { "token": userCredential.user.accessToken }
-                axios.post(`${baseURL}signup`, accessToken);
+                const data = { "token": userCredential.user.accessToken, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, }
+                axios.post(`${baseURL}signup`, data);
                 navigation.navigate('HomeNavigator', { "email": email })
             })
             .catch((error) => {
@@ -46,6 +49,18 @@ const Signup = () => {
                 Sign up to continue!
             </Heading>
             <VStack space={3} mt="5">
+                <FormControl>
+                    <FormControl.Label>First Name</FormControl.Label>
+                    <Input onChangeText={(text) => setFirstName(text)} />
+                </FormControl>
+                <FormControl>
+                    <FormControl.Label>Last Name</FormControl.Label>
+                    <Input onChangeText={(text) => setLastName(text)} />
+                </FormControl>
+                <FormControl>
+                    <FormControl.Label>Phone Number</FormControl.Label>
+                    <Input onChangeText={(text) => setPhoneNumber(text)} />
+                </FormControl>
                 <FormControl>
                     <FormControl.Label>Email</FormControl.Label>
                     <Input onChangeText={(text) => setEmail(text)} />

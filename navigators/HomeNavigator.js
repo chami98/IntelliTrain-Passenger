@@ -39,7 +39,7 @@ const HomeNavigator = ({ route }) => {
             />
             <Tab.Screen name="UserQR" component={UserQR} initialParams={{ "email": email }}
             />
-            <Tab.Screen name="Wallet" component={Wallet}
+            <Tab.Screen name="Wallet" component={Wallet} initialParams={{ "email": email }}
             />
         </Tab.Navigator>
 
