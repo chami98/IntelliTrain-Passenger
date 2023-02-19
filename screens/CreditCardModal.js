@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
-import { Button, Modal, FormControl, Input, Center, NativeBaseProvider, Stack, VStack } from "native-base";
+import { Button, Modal, Center, NativeBaseProvider, FormControl, Input } from "native-base";
+import CardDetails from './CardDetails';
 const CreditCardModal = ({ showModal, setShowModal }) => {
     return (
         <NativeBaseProvider>
@@ -12,17 +13,10 @@ const CreditCardModal = ({ showModal, setShowModal }) => {
                             <Modal.Header>TOP UP DIGITAL WALLET</Modal.Header>
                             <Modal.Body>
                                 <FormControl >
-                                    <Input placeholder='AMOUNT' keyboardType='numeric' />
+                                    <Input placeholder="Amount"
+                                        keyboardType="numeric" />
                                 </FormControl>
-                                <FormControl mt="3">
-                                    <Input placeholder='CARD NUMBER' keyboardType='numeric' />
-                                </FormControl>
-                                <FormControl mt="3">
-                                    <Input placeholder='EXPIRY' keyboardType='numeric' />
-                                </FormControl>
-                                <FormControl mt="3">
-                                    <Input placeholder='CVC' keyboardType='numeric' />
-                                </FormControl>
+                                <CardDetails />
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button.Group space={2}>

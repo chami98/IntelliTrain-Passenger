@@ -9,7 +9,6 @@ import CreditCardModal from './CreditCardModal';
 const Wallet = ({ route }) => {
     const { email } = route.params;
     const baseURL = 'https://us-central1-intellitrain-528b5.cloudfunctions.net/intelliTrain/';
-
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
@@ -29,7 +28,6 @@ const Wallet = ({ route }) => {
     return (
         <View style={styles.container}>
             {loading ?
-
                 <View style={styles.spinner}>
                     <ActivityIndicator size="large" style={{ alignSelf: 'center' }} />
                 </View>
@@ -67,7 +65,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontSize: 27,
+        fontSize: 28,
         marginTop: 100
     }, welcome: {
         fontSize: 17
