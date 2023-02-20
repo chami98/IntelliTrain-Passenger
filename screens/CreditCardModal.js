@@ -11,8 +11,6 @@ const CreditCardModal = ({ showModal, setShowModal, fetchData, email }) => {
     const [amount, setAmount] = useState();
     const [isLoading, setIsLoading] = useState(false);
 
-
-
     const data = {
         "email": email,
         "topUp": Number(amount)
@@ -25,7 +23,6 @@ const CreditCardModal = ({ showModal, setShowModal, fetchData, email }) => {
             console.log(error);
         })
     }
-
     const handlePress = () => {
         setIsLoading(true);
         setTimeout(() => {
