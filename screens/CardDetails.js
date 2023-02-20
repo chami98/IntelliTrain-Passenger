@@ -11,7 +11,7 @@ const CreditCardSchema = Yup.object().shape({
         .matches(/^\d{16}$/, 'Card number must be 16 digits'),
     expiry: Yup.string()
         .required('Expiry date is required')
-        .matches(/^\d{2}\/\d{2}$/, 'Expiry date must be in the format MM/YY'),
+        .matches(/^(0[1-9]|1[0-2])\/([0-9][0-9])$/, 'Expiry date must be in the format MM/YY'),
     cvc: Yup.string()
         .required('CVC is required')
         .matches(/^\d{3}$/, 'CVC must be 3 digits'),
