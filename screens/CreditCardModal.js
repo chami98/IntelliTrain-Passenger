@@ -1,8 +1,26 @@
 import { StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Modal, Center, NativeBaseProvider, FormControl, Input } from "native-base";
 import CardDetails from './CardDetails';
-const CreditCardModal = ({ showModal, setShowModal }) => {
+import axios from 'axios';
+
+const CreditCardModal = ({ showModal, setShowModal, fetchData, email }) => {
+
+    const baseURL = 'https://us-central1-intellitrain-528b5.cloudfunctions.net/intelliTrain/';
+    const [amount, setAmount] = useState();
+    const data = {
+        "email": email,
+        "topUp": Number(amount)
+    }
+    const updateData = () => {
+        axios.put(`${baseURL}wallet`, data).then(response => {
+            console.log(response.data);
+            fetchData();
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <NativeBaseProvider>
             <Center flex={1} px="3">
@@ -12,11 +30,7 @@ const CreditCardModal = ({ showModal, setShowModal }) => {
                             <Modal.CloseButton />
                             <Modal.Header>TOP UP DIGITAL WALLET</Modal.Header>
                             <Modal.Body>
-                                <FormControl >
-                                    <Input placeholder="Amount"
-                                        keyboardType="numeric" />
-                                </FormControl>
-                                <CardDetails />
+                                <CardDetails amount={amount} setAmount={setAmount} />
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button.Group space={2}>
@@ -27,6 +41,8 @@ const CreditCardModal = ({ showModal, setShowModal }) => {
                                     </Button>
                                     <Button onPress={() => {
                                         setShowModal(false);
+                                        console.log(amount);
+                                        updateData();
                                     }}>
                                         PAY
                                     </Button>

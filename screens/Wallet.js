@@ -13,8 +13,7 @@ const Wallet = ({ route }) => {
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
 
-
-    useEffect(() => {
+    const fetchData = () => {
         axios.get(`${baseURL}data/${email}`).then(response => {
             setData(response.data)
             console.log(data);
@@ -23,6 +22,9 @@ const Wallet = ({ route }) => {
             console.log(error);
             setLoading(false);
         })
+    }
+    useEffect(() => {
+        fetchData();
     }, [])
 
     return (
@@ -49,6 +51,8 @@ const Wallet = ({ route }) => {
                         <CreditCardModal
                             showModal={showModal}
                             setShowModal={setShowModal}
+                            fetchData={fetchData}
+                            email={email}
                         />
                     </View>
                 </View>

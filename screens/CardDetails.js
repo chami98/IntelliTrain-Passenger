@@ -15,13 +15,15 @@ const CreditCardSchema = Yup.object().shape({
     cvc: Yup.string()
         .required('CVC is required')
         .matches(/^\d{3}$/, 'CVC must be 3 digits'),
+    amount: Yup.number().required('Amount is required').min(0, 'Amount must be greater than or equal to 0'),
 });
 
-const CardDetails = () => {
+const CardDetails = ({ amount, setAmount }) => {
     return (
         <View >
             <Formik
                 initialValues={{
+                    amount: '',
                     name: '',
                     number: '',
                     expiry: '',
@@ -32,6 +34,16 @@ const CardDetails = () => {
             >
                 {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
                     <View>
+                        <FormControl >
+                            <Input placeholder="Amount"
+                                keyboardType="numeric"
+                                onChangeText={(text) => {
+                                    // handleChange('amount');
+                                    setAmount(text);
+                                }}
+                                onBlur={handleBlur('amount')}
+                            />
+                        </FormControl>
                         <FormControl mt="3">
                             <Input placeholder="Name on card"
                                 onChangeText={handleChange('name')}
