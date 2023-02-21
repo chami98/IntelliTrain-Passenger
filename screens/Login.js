@@ -18,9 +18,9 @@ const Login = ({ navigation }) => {
             .then((userCredential) => {
                 console.log('Signed In')
                 let email = userCredential.user.email;
-                console.log(userCredential.user.email)
+                let user = userCredential.user;
                 console.log(userCredential.user.accessToken)
-                navigation.navigate('HomeNavigator', { "email": email })
+                navigation.navigate('HomeNavigator', { "email": email, "user": user })
             })
             .catch(error => {
                 console.log(error)

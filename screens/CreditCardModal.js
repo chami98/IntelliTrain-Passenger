@@ -28,7 +28,7 @@ const CreditCardModal = ({ showModal, setShowModal, fetchData, email }) => {
         setTimeout(() => {
             setIsLoading(false);
             setShowModal(false);
-        }, 1500)
+        }, 7000)
     }
 
     return (
