@@ -27,9 +27,7 @@ const HomeNavigator = ({ route }) => {
                 console.log(error);
                 setLoading(false);
             })
-        }, 3000);
-
-
+        }, 4000);
     }
     useEffect(() => {
         fetchData();
