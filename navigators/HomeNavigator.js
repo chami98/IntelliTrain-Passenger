@@ -17,14 +17,17 @@ const HomeNavigator = ({ route }) => {
     const [showModal, setShowModal] = useState(false);
 
     const fetchData = () => {
-        axios.get(`${baseURL}data/${email}`).then(response => {
-            setData(response.data)
-            console.log(data);
-            setLoading(false);
-        }).catch(error => {
-            console.log(error);
-            setLoading(false);
-        })
+
+        setTimeout(() => {
+            axios.get(`${baseURL}data/${email}`).then(response => {
+                setData(response.data)
+                console.log(data);
+                setLoading(false);
+            }).catch(error => {
+                console.log(error);
+                setLoading(false);
+            })
+        }, 4000);
     }
     useEffect(() => {
         fetchData();
