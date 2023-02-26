@@ -22,12 +22,26 @@ const handleSignOut = (navigation) => {
 
 
 
-const UserAccount = ({ navigation }) => {
+const UserAccount = ({ navigation, route }) => {
+
+    const { data } = route.params;
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => handleSignOut(navigation)} style={{ marginTop: 10, backgroundColor: '#2ecc71', borderRadius: 30, paddingVertical: 15, paddingHorizontal: 30 }}>
-                <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold' }}>Sign Out</Text>
-            </TouchableOpacity>
+
+            <View style={styles.textContainer}>
+
+                <Text style={styles.titleText}>USER DETAILS</Text>
+
+                <Text style={styles.text}>{data.firstName} {data.lastName}</Text>
+
+                <Text style={styles.text}>{data.email}</Text>
+
+                <Text style={styles.text}>{data.phoneNumber}</Text>
+                <TouchableOpacity onPress={() => handleSignOut(navigation)} style={{ marginTop: 10, backgroundColor: '#2ecc71', borderRadius: 30, paddingVertical: 15, paddingHorizontal: 30 }}>
+                    <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold' }}>Sign Out</Text>
+                </TouchableOpacity>
+            </View>
+
         </View>
 
     )
@@ -40,5 +54,33 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    }, textContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 20,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+        elevation: 3,
+        marginRight: 20,
+        marginLeft: 20,
+        width: 300,
+        height: 300,
+
+    }, text: {
+        fontSize: 23,
+        marginBottom: 5
+    },
+    titleText: {
+        marginBottom: 10,
+        fontSize: 28,
+        fontWeight: 'bold',
+        color: "#3969b7"
     }
 })

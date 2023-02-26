@@ -16,7 +16,7 @@ const UserQR = ({ route }) => {
                 value={email}
                 size={300}
                 color='black'
-                backgroundColor='white'
+                backgroundColor='#f2f2f2'
                 logo={logoFromFile}
             />
             <Text style={styles.text}>{email}</Text>
@@ -29,7 +29,7 @@ const UserQR = ({ route }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#f2f2f2',
         alignItems: 'center',
         justifyContent: 'center',
     }, text: {

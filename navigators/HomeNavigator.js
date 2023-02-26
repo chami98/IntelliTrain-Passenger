@@ -77,7 +77,7 @@ const HomeNavigator = ({ route }) => {
                     />
                     <Tab.Screen name="UserAccount" component={UserAccount} options={{
                         tabBarLabel: 'Account',
-                    }} initialParams={{ "email": email }}
+                    }} initialParams={{ "data": data }}
                     />
 
                 </Tab.Navigator>
