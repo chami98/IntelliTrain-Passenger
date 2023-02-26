@@ -7,11 +7,32 @@ import { NavigationContainer } from '@react-navigation/native';
 import Login from './screens/Login';
 import HomeNavigator from './navigators/HomeNavigator';
 import Signup from './screens/Signup';
-
+import { useEffect } from 'react';
+import { getAuth, signOut } from "firebase/auth";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './config/firebaseConfig';
 
 
 
 export default function App() {
+
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const user = auth.currentUser;
+
+
+  //check whether user sign in or not
+  useEffect(() => {
+    if (user) {
+      console.log('sign in');
+    } else {
+      console.log('not sign in');
+    }
+
+  }, [])
 
   const Tab = createBottomTabNavigator();
   const Stack = createNativeStackNavigator();
