@@ -68,17 +68,18 @@ const styles = StyleSheet.create({
     appName: {
         fontSize: 38,
         fontWeight: 'bold',
-        marginBottom: -2,
         color: '#3969b7'
     },
     slogan: {
-        fontSize: 15,
+        fontSize: 12,
         textAlign: 'center',
         marginBottom: 16,
         fontStyle: 'italic',
+        color: '#3969b7',
+        fontWeight: 'bold'
     },
     greeting: {
-        fontSize: 20,
+        fontSize: 22,
         // backgroundColor: '#2ecc71',
         // borderWidth: 1,
         // borderColor: '#2ecc71',
