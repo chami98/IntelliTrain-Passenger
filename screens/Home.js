@@ -28,23 +28,23 @@ const Home = ({ route, navigation }) => {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'News' })}>
                         <Ionicons name="newspaper-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>News</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'LiveUpdates' })}>
                         <Ionicons name="pulse-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>Live Updates</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'SendNews' })}>
                         <Ionicons name="chatbubbles-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>Send News</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'LostAndFound' })}>
                         <Ionicons name="help-buoy-outline" size={60} color='#3969b7' />
-                        <Text style={styles.buttonText}>Lost and Found</Text>
+                        <Text style={styles.buttonText}>Lost & Found</Text>
                     </TouchableOpacity>
                 </View>
             </View>
