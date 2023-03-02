@@ -11,15 +11,18 @@ const UserQR = ({ route }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>My QR code</Text>
-            <QRCode
-                value={email}
-                size={300}
-                color='black'
-                backgroundColor='#f2f2f2'
-                logo={logoFromFile}
-            />
-            <Text style={styles.text}>{email}</Text>
+            <Text style={{ ...styles.text, fontSize: 27, }}>My QR code</Text>
+            <View style={styles.QRContainer}>
+                <QRCode
+                    value={email}
+                    size={300}
+                    color='black'
+                    backgroundColor='#fff'
+                    logo={logoFromFile}
+                />
+
+            </View>
+            <Text style={{ ...styles.text, marginTop: 10, }}>{email}</Text>
         </View>
 
     );
@@ -34,7 +37,28 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     }, text: {
         marginBottom: 10,
-        fontSize: 20
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: '#3969b7'
+    },
+    QRContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 20,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.22,
+        shadowRadius: 2.22,
+        elevation: 3,
+        marginRight: 20,
+        marginLeft: 20,
+        width: 340,
+        height: 340,
     }
 });
 export default UserQR;

@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
         elevation: 3,
         marginRight: 20,
         marginLeft: 20,
-        width: 300,
-        height: 300,
+        width: 340,
+        height: 340,
 
     }, text: {
         fontSize: 23,

@@ -69,10 +69,13 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontSize: 28,
-        marginTop: 100
+        fontSize: 30,
+        marginTop: 100,
+        color: '#3969b7',
+        fontWeight: 'bold'
     }, welcome: {
-        fontSize: 17
+        fontSize: 17,
+        color: '#3969b7'
     }, textContainer: {
         alignItems: 'center',
         justifyContent: 'center',
