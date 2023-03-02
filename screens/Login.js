@@ -21,6 +21,7 @@ const Login = ({ navigation }) => {
                 let user = userCredential.user;
                 console.log(userCredential.user.accessToken)
                 navigation.navigate('HomeNavigator', { "email": email, "user": user })
+                // navigation.navigate('HomeNavigator', { screen: 'HomeNavigator' });
             })
             .catch(error => {
                 console.log(error)

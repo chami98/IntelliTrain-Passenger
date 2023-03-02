@@ -8,6 +8,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { View, ActivityIndicator } from 'react-native';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import UserAccount from '../screens/UserAccount';
 
 const HomeNavigator = ({ route }) => {
 
@@ -52,6 +53,8 @@ const HomeNavigator = ({ route }) => {
                             iconName = focused ? 'qr-code-outline' : 'qr-code-outline';
                         } else if (route.name === 'Wallet') {
                             iconName = focused ? 'wallet-outline' : 'wallet-outline';
+                        } else if (route.name === 'UserAccount') {
+                            iconName = focused ? 'wallet-outline' : 'wallet-outline';
                         }
                         return <Ionicons name={iconName} size={size} color={color} />;
                     },
@@ -66,10 +69,17 @@ const HomeNavigator = ({ route }) => {
                 >
                     <Tab.Screen name="Home" component={Home} initialParams={{ "data": data }}
                     />
-                    <Tab.Screen name="UserQR" component={UserQR} initialParams={{ "email": email }}
+                    <Tab.Screen name="UserQR" component={UserQR} options={{
+                        tabBarLabel: 'QR',
+                    }} initialParams={{ "data": data }}
                     />
                     <Tab.Screen name="Wallet" component={Wallet} initialParams={{ "email": email }}
                     />
+                    <Tab.Screen name="UserAccount" component={UserAccount} options={{
+                        tabBarLabel: 'Account',
+                    }} initialParams={{ "data": data }}
+                    />
+
                 </Tab.Navigator>
             )}
 
