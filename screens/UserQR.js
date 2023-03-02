@@ -7,14 +7,20 @@ let logoFromFile = require('../assets/trainLogo.png');
 
 const UserQR = ({ route }) => {
 
-    const { email } = route.params;
+    const { data } = route.params;
+    const email = data.email;
+    const uid = data.uid;
+    const firstName = data.firstName;
+    const lastName = data.lastName;
 
     return (
         <View style={styles.container}>
-            <Text style={{ ...styles.text, fontSize: 27, }}>My QR code</Text>
+            {/* <Text style={{ ...styles.text, fontSize: 27, }}>My QR code</Text> */}
+            <Text style={{ ...styles.text, marginTop: 10, fontSize: 27 }}>{firstName} {lastName}</Text>
+
             <View style={styles.QRContainer}>
                 <QRCode
-                    value={email}
+                    value={uid}
                     size={300}
                     color='black'
                     backgroundColor='#fff'
@@ -22,7 +28,8 @@ const UserQR = ({ route }) => {
                 />
 
             </View>
-            <Text style={{ ...styles.text, marginTop: 10, }}>{email}</Text>
+            <Text style={{ ...styles.text, marginTop: 10, }}>Code: {uid}</Text>
+            <Text style={{ ...styles.text }}>Email: {email}</Text>
         </View>
 
     );
@@ -37,7 +44,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     }, text: {
         marginBottom: 10,
-        fontSize: 22,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#3969b7'
     },

@@ -71,7 +71,7 @@ const HomeNavigator = ({ route }) => {
                     />
                     <Tab.Screen name="UserQR" component={UserQR} options={{
                         tabBarLabel: 'QR',
-                    }} initialParams={{ "email": email }}
+                    }} initialParams={{ "data": data }}
                     />
                     <Tab.Screen name="Wallet" component={Wallet} initialParams={{ "email": email }}
                     />
