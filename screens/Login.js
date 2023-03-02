@@ -20,7 +20,7 @@ const Login = ({ navigation }) => {
                 let email = userCredential.user.email;
                 let user = userCredential.user;
                 console.log(userCredential.user.accessToken)
-                navigation.navigate('HomeNavigator', { "email": email, "user": user })
+                navigation.navigate('AppTabNavigator', { "email": email, "user": user })
                 // navigation.navigate('HomeNavigator', { screen: 'HomeNavigator' });
             })
             .catch(error => {

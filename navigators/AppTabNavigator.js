@@ -2,15 +2,14 @@ import { StyleSheet, } from 'react-native';
 import UserQR from '../screens/UserQR';
 import Home from '../screens/Home';
 import Wallet from '../screens/Wallet';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { View, ActivityIndicator } from 'react-native';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import UserAccount from '../screens/UserAccount';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const HomeNavigator = ({ route }) => {
+const AppTabNavigator = ({ route }) => {
 
     const baseURL = 'https://us-central1-intellitrain-528b5.cloudfunctions.net/intelliTrain/';
     const [data, setData] = useState([]);
@@ -82,12 +81,11 @@ const HomeNavigator = ({ route }) => {
 
                 </Tab.Navigator>
             )}
-
         </>
     )
 }
 
-export default HomeNavigator
+export default AppTabNavigator
 
 const styles = StyleSheet.create({
     spinner: {
