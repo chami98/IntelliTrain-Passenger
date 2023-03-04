@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import UserAccount from '../screens/UserAccount';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Image } from 'react-native';
 
 const AppTabNavigator = ({ route }) => {
 
@@ -40,7 +41,12 @@ const AppTabNavigator = ({ route }) => {
     return (
         <>
             {loading ? <View style={styles.spinner}>
-                <ActivityIndicator size="large" style={{ alignSelf: 'center' }} />
+                {/* <ActivityIndicator size="large" style={{ alignSelf: 'center' }} /> */}
+                <Image
+                    style={styles.image}
+                    source={require('../assets/trainAnimation.gif')
+                    }
+                />
             </View> : (
                 <Tab.Navigator screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
@@ -92,5 +98,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    }, image: {
+        width: "70%",
+        height: 70
     }
 })
