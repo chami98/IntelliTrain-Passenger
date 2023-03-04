@@ -3,7 +3,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Home = ({ route }) => {
+const Home = ({ route, navigation }) => {
 
     const { data } = route.params;
     return (
@@ -17,33 +17,34 @@ const Home = ({ route }) => {
 
             <View style={styles.buttonContainer}>
                 <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'TimeTable' })}>
                         <Ionicons name="timer-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>Time Table</Text>
+
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'TrackTrain' })}>
                         <Ionicons name="train-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>Track Train</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'News' })}>
                         <Ionicons name="newspaper-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>News</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'LiveUpdates' })}>
                         <Ionicons name="pulse-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>Live Updates</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'SendNews' })}>
                         <Ionicons name="chatbubbles-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>Send News</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'LostAndFound' })}>
                         <Ionicons name="help-buoy-outline" size={60} color='#3969b7' />
-                        <Text style={styles.buttonText}>Lost and Found</Text>
+                        <Text style={styles.buttonText}>Lost & Found</Text>
                     </TouchableOpacity>
                 </View>
             </View>

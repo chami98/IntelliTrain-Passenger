@@ -28,7 +28,7 @@ const Signup = () => {
             .then((userCredential) => {
                 const data = { "token": userCredential.user.accessToken, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, }
                 axios.post(`${baseURL}signup`, data);
-                navigation.navigate('HomeNavigator', { "email": email })
+                navigation.navigate('AppTabNavigator', { "email": email })
             })
             .catch((error) => {
                 console.log(error)

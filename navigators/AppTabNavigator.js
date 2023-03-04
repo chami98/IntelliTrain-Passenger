@@ -2,15 +2,15 @@ import { StyleSheet, } from 'react-native';
 import UserQR from '../screens/UserQR';
 import Home from '../screens/Home';
 import Wallet from '../screens/Wallet';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { View, ActivityIndicator } from 'react-native';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import UserAccount from '../screens/UserAccount';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Image } from 'react-native';
 
-const HomeNavigator = ({ route }) => {
+const AppTabNavigator = ({ route }) => {
 
     const baseURL = 'https://us-central1-intellitrain-528b5.cloudfunctions.net/intelliTrain/';
     const [data, setData] = useState([]);
@@ -41,7 +41,12 @@ const HomeNavigator = ({ route }) => {
     return (
         <>
             {loading ? <View style={styles.spinner}>
-                <ActivityIndicator size="large" style={{ alignSelf: 'center' }} />
+                {/* <ActivityIndicator size="large" style={{ alignSelf: 'center' }} /> */}
+                <Image
+                    style={styles.image}
+                    source={require('../assets/trainAnimation.gif')
+                    }
+                />
             </View> : (
                 <Tab.Navigator screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
@@ -82,17 +87,19 @@ const HomeNavigator = ({ route }) => {
 
                 </Tab.Navigator>
             )}
-
         </>
     )
 }
 
-export default HomeNavigator
+export default AppTabNavigator
 
 const styles = StyleSheet.create({
     spinner: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    }, image: {
+        width: "70%",
+        height: 70
     }
 })
