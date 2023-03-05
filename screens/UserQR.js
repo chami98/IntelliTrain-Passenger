@@ -29,7 +29,7 @@ const UserQR = ({ route }) => {
 
             </View>
             <Text style={{ ...styles.text, marginTop: 10, }}>Code: {uid}</Text>
-            <Text style={{ ...styles.text }}>Email: {email}</Text>
+            {/* <Text style={{ ...styles.text }}>Email: {email}</Text> */}
         </View>
 
     );
