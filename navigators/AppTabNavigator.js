@@ -9,6 +9,7 @@ import axios from 'axios';
 import UserAccount from '../screens/UserAccount';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
+import { Text } from 'react-native';
 
 const AppTabNavigator = ({ route }) => {
 
@@ -47,6 +48,8 @@ const AppTabNavigator = ({ route }) => {
                     source={require('../assets/trainAnimation.gif')
                     }
                 />
+
+                <Text style={styles.text}>Checking credentials, almost there...</Text>
             </View> : (
                 <Tab.Navigator screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
@@ -97,9 +100,15 @@ const styles = StyleSheet.create({
     spinner: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     }, image: {
         width: "70%",
         height: 70
+    }, text: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#333',
+        textAlign: 'center',
+        marginVertical: 10,
     }
 })

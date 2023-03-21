@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { getAuth, signOut } from "firebase/auth";
 import firebase from 'firebase/app';
@@ -28,9 +28,19 @@ const UserAccount = ({ navigation, route }) => {
     return (
         <View style={styles.container}>
 
+
+
             <View style={styles.textContainer}>
+                <View style={styles.imageView}>
+                    <Image
+                        style={styles.image}
+                        source={require('../assets/user.gif')
+                        }
+                    /></View>
 
                 <Text style={styles.titleText}>USER DETAILS</Text>
+
+
 
                 <Text style={styles.text}>{data.firstName} {data.lastName}</Text>
 
@@ -71,16 +81,22 @@ const styles = StyleSheet.create({
         marginRight: 20,
         marginLeft: 20,
         width: 340,
-        height: 340,
+        height: 500,
 
     }, text: {
-        fontSize: 23,
+        fontSize: 25,
         marginBottom: 5
     },
     titleText: {
         marginBottom: 10,
-        fontSize: 28,
+        fontSize: 33,
         fontWeight: 'bold',
         color: "#3969b7"
+    }, image: {
+        height: 200,
+        width: 200,
+    }, imageView: {
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })

@@ -39,7 +39,7 @@ const Wallet = ({ route }) => {
                     <View style={styles.imageView}>
                         <Image
                             style={styles.image}
-                            source={require('../assets/wallet.png')
+                            source={require('../assets/wallet4.gif')
                             }
                         /></View>
                     <View style={styles.textContainer}>
