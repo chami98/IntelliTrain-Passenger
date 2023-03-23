@@ -9,10 +9,10 @@ export default function Example() {
       {/* <ActivityIndicator size={'large'} /> */}
       <Image
         style={{
-          height: 300,
-          width: 300,
+          height: 400,
+          width: 400,
         }}
-        source={require('../assets/paymentAnimation.gif')}
+        source={require('../assets/payment2.gif')}
       />
       <Text style={styles.text}>Processing your payment</Text>
 
