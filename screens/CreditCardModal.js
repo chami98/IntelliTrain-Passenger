@@ -35,7 +35,6 @@ const CreditCardModal = ({ showModal, setShowModal, fetchData, email }) => {
         <NativeBaseProvider>
             <Center flex={1} px="3">
                 <Center>
-
                     <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
 
                         {isLoading ? (
