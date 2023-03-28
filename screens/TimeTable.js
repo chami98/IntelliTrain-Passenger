@@ -1,4 +1,4 @@
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -23,6 +23,12 @@ const TimeTable = () => {
         fetchData();
     }, [])
 
+    const renderItem = ({ item }) => (
+        <View style={{ width: "100%", alignItems: "center", justifyContent: "center" }}>
+            <Text style={{}}>{item.text}</Text>
+        </View>
+    );
+
     return (
 
         <View style={styles.container}>
@@ -30,7 +36,15 @@ const TimeTable = () => {
                 loading ? <View style={styles.spinner}>
                     <ActivityIndicator size="large" style={{ alignSelf: 'center' }} />
                 </View> : (
-                    <Text style={styles.text}>Time Table</Text>
+
+                    <View>
+                        <Text style={styles.text}>Time Table</Text>
+                        <FlatList
+                            data={data}
+                            renderItem={renderItem}
+                            keyExtractor={item => item.id.toString()}
+                        />
+                    </View>
 
                 )
             }
@@ -49,6 +63,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#3969b7',
         fontWeight: 'bold',
-        fontSize: 25
+        fontSize: 25,
+        margin: 20
     }
 })
