@@ -3,8 +3,8 @@ import UserQR from '../screens/UserQR';
 import Home from '../screens/Home';
 import Wallet from '../screens/Wallet';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { View, ActivityIndicator } from 'react-native';
-import { useEffect, useState } from 'react';
+import { View, ActivityIndicator, Animated } from 'react-native';
+import { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import UserAccount from '../screens/UserAccount';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -35,6 +35,30 @@ const AppTabNavigator = ({ route }) => {
         fetchData();
     }, [])
 
+    const FadeInView = (props) => {
+        const fadeAnim = useRef(new Animated.Value(0)).current;
+
+        useEffect(() => {
+            Animated.timing(
+                fadeAnim,
+                {
+                    toValue: 1,
+                    duration: 3500,
+                    useNativeDriver: true
+                }
+            ).start();
+        }, [fadeAnim]);
+
+        return (
+            <Animated.View
+                style={{
+                    opacity: fadeAnim
+                }}>
+                {props.children}
+            </Animated.View>
+        );
+    }
+
     const Tab = createBottomTabNavigator();
     const { email } = route.params;
     const { user } = route.params;
@@ -45,11 +69,12 @@ const AppTabNavigator = ({ route }) => {
                 {/* <ActivityIndicator size="large" style={{ alignSelf: 'center' }} /> */}
                 <Image
                     style={styles.image}
-                    source={require('../assets/trainAnimation.gif')
+                    source={require('../assets/trainInside.gif')
                     }
                 />
-
-                <Text style={styles.text}>Checking credentials, almost there...</Text>
+                <FadeInView>
+                    <Text style={styles.text}>Checking credentials, almost there...</Text>
+                </FadeInView>
             </View> : (
                 <Tab.Navigator screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
@@ -102,13 +127,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     }, image: {
-        width: "70%",
-        height: 70
+        // width: "70%",
+        height: 400,
+        width: 400
     }, text: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#3969b7',
         textAlign: 'center',
-        marginVertical: 10,
+        // marginVertical: 10,
     }
 })
