@@ -38,8 +38,8 @@ const TimeTable = () => {
     const [endStationOpen, setEndStationOpen] = useState(false);
     const [startStationValue, setStartStationValue] = useState(null);
     const [endStationValue, setStationValue] = useState(null);
-    const [stations, setStations] = useState([
-    ]);
+    const [stations, setStations] = useState([]);
+    const [directTrains, setDirectTrains] = useState([]);
 
     const onStationOpen = useCallback(() => {
         setGenderOpen(false);
@@ -48,7 +48,26 @@ const TimeTable = () => {
     const { control } = useForm();
 
     const handleSubmit = () => {
-        console.log(startStationValue, endStationValue)
+        axios.get('https://us-central1-sierra-80ddd.cloudfunctions.net/api/trains', {
+            params: {
+                startStaion: startStationValue,
+                endStation: endStationValue,
+            },
+        })
+            .then(response => {
+                setDirectTrains(response.data.RESULTS.directTrains);
+                console.log(directTrains);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+
+
+
+
+
+
     }
 
     return (
