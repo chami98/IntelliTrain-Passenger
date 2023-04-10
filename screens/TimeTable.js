@@ -1,17 +1,28 @@
-import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useState, useCallback, useEffect } from "react";
+import {
+    StyleSheet,
+    View,
+    TextInput,
+    Text,
+    TouchableOpacity,
+} from "react-native";
+import DropDownPicker from "react-native-dropdown-picker";
+import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios'
 
 
 const TimeTable = () => {
-
-    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const baseURL = 'https://us-central1-sierra-80ddd.cloudfunctions.net/api/';
     const fetchData = () => {
         axios.get(`${baseURL}stations`).then(response => {
-            setData(response.data)
+            const resData = response.data;
+            const result = resData.map((item) => ({
+                label: item.text,
+                value: item.id
+            }))
+            setStations(result)
             console.log(data);
             setLoading(false);
         }).catch(error => {
@@ -23,31 +34,94 @@ const TimeTable = () => {
         fetchData();
     }, [])
 
-    const renderItem = ({ item }) => (
-        <View style={{ width: "100%", alignItems: "center", justifyContent: "center" }}>
-            <Text style={{}}>{item.text}</Text>
-        </View>
-    );
+    const [startStationOpen, setStartStationOpen] = useState(false);
+    const [endStationOpen, setEndStationOpen] = useState(false);
+    const [startStationValue, setStartStationValue] = useState(null);
+    const [endStationValue, setStationValue] = useState(null);
+    const [stations, setStations] = useState([
+    ]);
+
+    const onStationOpen = useCallback(() => {
+        setGenderOpen(false);
+    }, []);
+
+    const { control } = useForm();
+
+    const handleSubmit = () => {
+        console.log(startStationValue, endStationValue)
+    }
 
     return (
 
         <View style={styles.container}>
-            {
-                loading ? <View style={styles.spinner}>
-                    <ActivityIndicator size="large" style={{ alignSelf: 'center' }} />
-                </View> : (
+            <View>
+                <Text style={styles.label}>Start Station *</Text>
+                <Controller
+                    name="startStation"
+                    defaultValue=""
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                        <View style={styles.dropdownCompany}>
+                            <DropDownPicker
+                                style={styles.dropdown}
+                                open={startStationOpen}
+                                value={startStationValue} //endStationValue
+                                items={stations}
+                                setOpen={setStartStationOpen}
+                                setValue={setStartStationValue}
+                                setItems={setStations}
+                                placeholder="Select Start Station"
+                                placeholderStyle={styles.placeholderStyles}
+                                loading={loading}
+                                activityIndicatorColor="#5188E3"
+                                searchable={true}
+                                searchPlaceholder="Search your station here..."
+                                onOpen={onStationOpen}
+                                onChangeValue={onChange}
+                                zIndex={1000}
+                                zIndexInverse={3000}
+                            />
+                        </View>
+                    )}
+                />
+            </View>
 
-                    <View>
-                        <Text style={styles.text}>Time Table</Text>
-                        <FlatList
-                            data={data}
-                            renderItem={renderItem}
-                            keyExtractor={item => item.id.toString()}
-                        />
-                    </View>
+            <View>
+                <Text style={styles.label}>End Station</Text>
+                <Controller
+                    name="endStation"
+                    defaultValue=""
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                        <View style={styles.dropdownCompany}>
+                            <DropDownPicker
+                                style={styles.dropdown}
+                                open={endStationOpen}
+                                value={endStationValue} //endStationValue
+                                items={stations}
+                                setOpen={setEndStationOpen}
+                                setValue={setStationValue}
+                                setItems={setStations}
+                                placeholder="Select End Station"
+                                placeholderStyle={styles.placeholderStyles}
+                                loading={loading}
+                                activityIndicatorColor="#5188E3"
+                                searchable={true}
+                                searchPlaceholder="Search your station here..."
+                                onOpen={onStationOpen}
+                                onChangeValue={onChange}
+                                zIndex={1000}
+                                zIndexInverse={3000}
+                            />
+                        </View>
+                    )}
+                />
+            </View>
 
-                )
-            }
+            <TouchableOpacity onPress={handleSubmit}>
+                <Text style={styles.getStarted}>SEARCH</Text>
+            </TouchableOpacity>
+
         </View>
     )
 }
@@ -58,12 +132,50 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
     },
-    text: {
-        color: '#3969b7',
-        fontWeight: 'bold',
-        fontSize: 25,
-        margin: 20
-    }
-})
+    input: {
+        borderStyle: "solid",
+        borderColor: "#B7B7B7",
+        borderRadius: 7,
+        borderWidth: 1,
+        fontSize: 15,
+        height: 50,
+        marginHorizontal: 10,
+        paddingStart: 10,
+        marginBottom: 15,
+    },
+    label: {
+        marginBottom: 7,
+        marginStart: 10,
+    },
+    placeholderStyles: {
+        color: "grey",
+    },
+    dropdownCompany: {
+        marginHorizontal: 10,
+        marginBottom: 200,
+    },
+    dropdown: {
+        borderColor: "#B7B7B7",
+        height: 50,
+    },
+    getStarted: {
+        backgroundColor: "#5188E3",
+        color: "white",
+        textAlign: "center",
+        marginHorizontal: 60,
+        paddingVertical: 15,
+        borderRadius: 50,
+        marginTop: 20,
+    },
+    logIn: {
+        flex: 1,
+        justifyContent: "flex-end",
+        marginBottom: 10,
+    },
+    links: {
+        textAlign: "center",
+        textDecorationLine: "underline",
+        color: "#758580",
+    },
+});
