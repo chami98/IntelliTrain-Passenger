@@ -11,7 +11,7 @@ import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios'
 
 
-const TimeTable = () => {
+const TimeTable = ({ navigation }) => {
     const [loading, setLoading] = useState(true);
 
     const baseURL = 'https://us-central1-sierra-80ddd.cloudfunctions.net/api/';
@@ -24,10 +24,8 @@ const TimeTable = () => {
             }))
             setStations(result)
             console.log(data);
-            setLoading(false);
         }).catch(error => {
             console.log(error);
-            setLoading(false);
         })
     }
     useEffect(() => {
@@ -57,9 +55,13 @@ const TimeTable = () => {
             .then(response => {
                 setDirectTrains(response.data.RESULTS.directTrains);
                 console.log(directTrains);
+                setLoading(false);
+                navigation.navigate('TrainDetails', { "directTrains": directTrains });
             })
             .catch(error => {
                 console.error(error);
+                setLoading(false);
+
             });
 
 

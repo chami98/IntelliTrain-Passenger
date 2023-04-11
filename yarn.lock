@@ -7511,6 +7511,11 @@ react-native-codegen@^0.70.6:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-collapsible@^1.6.0:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-1.6.1.tgz#27e289831a6955aebde98abff2424a7710f36f02"
+  integrity sha512-orF4BeiXd2hZW7fu9YcqIJXzN6TJcFcddY807D3MAOVktLuW9oQ+RIkrTJ5DR3v9ZOFfREkOjEmS79qeUTvkBQ==
+
 react-native-credit-card@^0.1.9:
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/react-native-credit-card/-/react-native-credit-card-0.1.9.tgz#3d64a102590122ddcaeca701cd11b8235dd2fbb6"
@@ -7590,6 +7595,13 @@ react-native-screens@~3.18.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-simple-accordion@^1.17.0:
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/react-native-simple-accordion/-/react-native-simple-accordion-1.17.0.tgz#1b47dcf15e54c474a39c9ff8127a4b82bf45b96c"
+  integrity sha512-GhlBMkf7bPkxJaL6cb8tKu+PAq9zcv08anCrlVZWLFC9A+X/lrv6axZOrnwbyHWuEggSE96NHXZxiondHNEA7w==
+  dependencies:
+    react-native-collapsible "^1.6.0"
 
 react-native-svg-transformer@^1.0.0:
   version "1.0.0"
