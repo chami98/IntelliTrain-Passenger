@@ -5,6 +5,7 @@ import {
     TextInput,
     Text,
     TouchableOpacity,
+    Image,
 } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import { useForm, Controller } from 'react-hook-form';
@@ -13,7 +14,6 @@ import axios from 'axios'
 
 const TimeTable = ({ navigation }) => {
     const [loading, setLoading] = useState(true);
-
     const baseURL = 'https://us-central1-sierra-80ddd.cloudfunctions.net/api/';
     const fetchData = () => {
         axios.get(`${baseURL}stations`).then(response => {
@@ -46,32 +46,8 @@ const TimeTable = ({ navigation }) => {
     const { control } = useForm();
 
     const handleSubmit = () => {
-        axios.get('https://us-central1-sierra-80ddd.cloudfunctions.net/api/trains', {
-            params: {
-                startStaion: startStationValue,
-                endStation: endStationValue,
-            },
-        })
-            .then(response => {
-                setDirectTrains(response.data.RESULTS.directTrains);
-                console.log(directTrains);
-                setLoading(false);
-                navigation.navigate('TrainDetails', { "directTrains": directTrains });
-            })
-            .catch(error => {
-                console.error(error);
-                setLoading(false);
-
-            });
-
-
-
-
-
-
-
+        navigation.navigate('TrainDetails', { "startStationValue": startStationValue, "endStationValue": endStationValue })
     }
-
     return (
 
         <View style={styles.container}>
