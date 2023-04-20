@@ -42,14 +42,16 @@ const AppTabNavigator = ({ route }) => {
     return (
         <>
             {loading ? <View style={styles.spinner}>
-                {/* <ActivityIndicator size="large" style={{ alignSelf: 'center' }} /> */}
+
                 <Image
                     style={styles.image}
                     source={require('../assets/trainInside.gif')
                     }
                 />
-
                 <Text style={styles.text}>Checking credentials, almost there...</Text>
+                <View style={styles.spinner}>
+                    <ActivityIndicator size="large" />
+                </View>
 
             </View> : (
                 <Tab.Navigator screenOptions={({ route }) => ({
@@ -100,12 +102,14 @@ export default AppTabNavigator
 const styles = StyleSheet.create({
     spinner: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        marginTop: 50
     }, image: {
         // width: "70%",
         height: 400,
-        width: 400
+        width: 400,
+        marginTop: 150
     }, text: {
         fontSize: 20,
         fontWeight: 'bold',

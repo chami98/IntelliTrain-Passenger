@@ -50,7 +50,6 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name='Home' component={Home} />
         <Stack.Screen options={{ headerShown: false }} name='AppTabNavigator' component={AppTabNavigator} />
         <Stack.Screen options={{ headerShown: false }} name='AppStackNavigator' component={AppStackNavigator} />
-
       </Stack.Navigator>
     </NavigationContainer>
 
