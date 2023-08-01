@@ -31,7 +31,10 @@ const Wallet = ({ route }) => {
         <View style={styles.container}>
             {loading ?
                 <View style={styles.spinner}>
-                    <ActivityIndicator size="large" style={{ alignSelf: 'center' }} />
+                    <Image
+                        style={styles.loader}
+                        source={require('../assets/load.gif')}
+                    />
                 </View>
                 : (<View>
                     <Text style={styles.title}>IntelliTrain Digital Wallet</Text>
@@ -46,7 +49,7 @@ const Wallet = ({ route }) => {
                         <Text style={styles.text}>Avaliable Balance</Text>
                         <Text style={styles.balanceText}>Rs.{data.avaliableBalance}</Text>
                         <TouchableOpacity onPress={() => setShowModal(true)} style={{ marginTop: 10, backgroundColor: '#2ecc71', borderRadius: 30, paddingVertical: 15, paddingHorizontal: 30 }}>
-                            <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold' }}>Top up</Text>
+                            <Text style={{ color: 'white', fontSize: 17, fontWeight: 'bold' }}>Top up</Text>
                         </TouchableOpacity>
                         <CreditCardModal
                             showModal={showModal}
@@ -69,26 +72,27 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontSize: 30,
+        fontSize: 31,
         marginTop: 100,
         color: '#3969b7',
         fontWeight: 'bold'
     }, welcome: {
-        fontSize: 17,
+        fontSize: 19,
         color: '#3969b7'
     }, textContainer: {
         alignItems: 'center',
         justifyContent: 'center',
     }, image: {
         marginTop: 60,
-        height: 300,
-        width: 300,
+        height: 250,
+        width: 250,
     }, imageView: {
         justifyContent: 'center',
         alignItems: 'center'
     }, text: {
-        fontSize: 18,
-        marginBottom: 10
+        fontSize: 20,
+        marginBottom: 10,
+        marginTop: 20
     }, spinner: {
         flex: 1,
         justifyContent: 'center',
@@ -102,6 +106,6 @@ const styles = StyleSheet.create({
         padding: 8,
         color: '#3969b7',
         fontWeight: 'bold',
-        fontSize: 17
+        fontSize: 20
     }
 })

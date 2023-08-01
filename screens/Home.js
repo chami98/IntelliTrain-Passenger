@@ -20,7 +20,6 @@ const Home = ({ route, navigation }) => {
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'TimeTable' })}>
                         <Ionicons name="timer-outline" size={60} color='#3969b7' />
                         <Text style={styles.buttonText}>Time Table</Text>
-
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', { screen: 'TrackTrain' })}>
                         <Ionicons name="train-outline" size={60} color='#3969b7' />
