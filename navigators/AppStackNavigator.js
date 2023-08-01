@@ -8,6 +8,7 @@ import LiveUpdates from '../screens/LiveUpdates';
 import SendNews from '../screens/SendNews';
 import LostAndFound from '../screens/LostAndFound';
 import TrainDetails from '../screens/TrainDetails';
+import MapContainer from '../screens/MapContainer';
 
 const AppStackNavigator = () => {
     const Stack = createNativeStackNavigator();
@@ -18,6 +19,7 @@ const AppStackNavigator = () => {
                 <Stack.Screen options={{ headerShown: false }} name='TimeTable' component={TimeTable} />
                 <Stack.Screen options={{ headerShown: false }} name='TrainDetails' component={TrainDetails} />
                 <Stack.Screen options={{ headerShown: false }} name='TrackTrain' component={TrackTrain} />
+                <Stack.Screen options={{ headerShown: false }} name='MapContainer' component={MapContainer} />
                 <Stack.Screen options={{ headerShown: false }} name='News' component={News} />
                 <Stack.Screen options={{ headerShown: false }} name='LiveUpdates' component={LiveUpdates} />
                 <Stack.Screen options={{ headerShown: false }} name='SendNews' component={SendNews} />
