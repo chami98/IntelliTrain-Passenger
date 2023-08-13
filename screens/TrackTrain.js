@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const TrackTrain = ({ route, navigation }) => {
 
 
     return (
         <View style={styles.container}>
+            <Icon name="ticket" size={38} color="#2ecc71" style={styles.titleIcon} />
             <Text style={styles.text}>Select Train</Text>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
@@ -15,7 +17,10 @@ const TrackTrain = ({ route, navigation }) => {
                     title: "Yaal Dewi / යාල් දේවි"
                 }
             })}>
-                <Text style={styles.buttonText}>Yaal Dewi / යාල් දේවි</Text>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Yaal Dewi / යාල් දේවි</Text>
+                </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
@@ -25,7 +30,10 @@ const TrackTrain = ({ route, navigation }) => {
                     title: "Udarata Menike / උඩරට මැණිකේ"
                 }
             })}>
-                <Text style={styles.buttonText}>Udarata Menike / උඩරට මැණිකේ</Text>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Udarata Menike / උඩරට මැණිකේ</Text>
+                </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
@@ -35,7 +43,10 @@ const TrackTrain = ({ route, navigation }) => {
                     title: "Podi Menike / පොඩි මැණිකේ"
                 }
             })}>
-                <Text style={styles.buttonText}>Podi Menike / පොඩි මැණිකේ</Text>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Podi Menike / පොඩි මැණිකේ</Text>
+                </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
@@ -45,7 +56,10 @@ const TrackTrain = ({ route, navigation }) => {
                     title: "Uttara Devi / උත්තරා දේවි"
                 }
             })}>
-                <Text style={styles.buttonText}>Uttara Devi / උත්තරා දේවි</Text>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Uttara Devi / උත්තරා දේවි</Text>
+                </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
@@ -55,7 +69,10 @@ const TrackTrain = ({ route, navigation }) => {
                     title: "Galu Kumari / ගාලු කුමාරි"
                 }
             })}>
-                <Text style={styles.buttonText}>Galu Kumari / ගාලු කුමාරි</Text>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Galu Kumari / ගාලු කුමාරි</Text>
+                </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
@@ -65,7 +82,23 @@ const TrackTrain = ({ route, navigation }) => {
                     title: "Rajarata Rajini / රජරට රැජිණි"
                 }
             })}>
-                <Text style={styles.buttonText}>Rajarata Rajini / රජරට රැජිණි</Text>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Rajarata Rajini / රජරට රැජිණි</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
+                screen: 'MapContainer',
+                params: {
+                    latitude: 6.14204,
+                    longitude: 80.10008,
+                    title: "Sagarika / සාගරිකා"
+                }
+            })}>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Sagarika / සාගරිකා</Text>
+                </View>
             </TouchableOpacity>
         </View>
     )
@@ -76,8 +109,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
-    }, button: {
+        alignItems: 'center',
+        backgroundColor: '#f2f2f2',
+    },
+
+    button: {
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#fff',
@@ -86,26 +123,33 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
-            height: 1,
+            height: 2,
         },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
-        elevation: 3,
-        width: 320,
-        height: 90,
-        margin: 10
+        shadowOpacity: 0.2,
+        shadowRadius: 3.84,
+        elevation: 5,
+        width: '80%',
+        marginVertical: 10,
+        borderWidth: 1,
+        borderColor: '#ddd',
     },
     buttonText: {
-        marginTop: 10,
         fontSize: 16,
         fontWeight: 'bold',
         color: '#3969b7',
         textAlign: 'center',
     },
     text: {
-        fontSize: 22,
+        fontSize: 24,
         color: '#2ecc71',
         fontWeight: 'bold',
+        marginBottom: 20,
     },
-
-})
+    icon: {
+        marginRight: 1,
+    },
+    buttonContent: {
+        flex: 1, // Allow text to expand vertically
+        alignItems: 'center', // Center text vertically
+    },
+});
