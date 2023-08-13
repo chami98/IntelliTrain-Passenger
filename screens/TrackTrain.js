@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -7,6 +7,7 @@ const TrackTrain = ({ route, navigation }) => {
 
     return (
         <View style={styles.container}>
+            <Icon name="ticket" size={38} color="#2ecc71" style={styles.titleIcon} />
             <Text style={styles.text}>Select Train</Text>
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
@@ -86,6 +87,19 @@ const TrackTrain = ({ route, navigation }) => {
                     <Text style={styles.buttonText}>Rajarata Rajini / රජරට රැජිණි</Text>
                 </View>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
+                screen: 'MapContainer',
+                params: {
+                    latitude: 6.14204,
+                    longitude: 80.10008,
+                    title: "Sagarika / සාගරිකා"
+                }
+            })}>
+                <Icon name="train" size={24} color="#3969b7" style={styles.icon} />
+                <View style={styles.buttonContent}>
+                    <Text style={styles.buttonText}>Sagarika / සාගරිකා</Text>
+                </View>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -98,6 +112,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#f2f2f2',
     },
+
     button: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -131,7 +146,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     icon: {
-        marginRight: 10,
+        marginRight: 1,
     },
     buttonContent: {
         flex: 1, // Allow text to expand vertically
