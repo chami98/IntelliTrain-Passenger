@@ -2,39 +2,39 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { View, Text } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
-let logoFromFile = require('../assets/trainLogo.png');
-
+import Icon from 'react-native-vector-icons/FontAwesome';
+import logoFromFile from '../assets/trainLogo.png';
 
 const UserQR = ({ route }) => {
-
     const { data } = route.params;
-    const email = data.email;
-    const uid = data.uid;
-    const firstName = data.firstName;
-    const lastName = data.lastName;
+    const { email, uid, firstName, lastName } = data;
 
     return (
         <View style={styles.container}>
-            {/* <Text style={{ ...styles.text, fontSize: 27, }}>My QR code</Text> */}
-            <Text style={{ ...styles.text, marginTop: 10, fontSize: 27 }}>{firstName} {lastName}</Text>
+            <View style={styles.titleContainer}>
+                <Text style={styles.titleText}>My QR Code</Text>
+            </View>
+            <View style={styles.nameContainer}>
+                <Icon name="user" size={24} color="#666" style={styles.icon} />
+                <Text style={styles.nameText}>{firstName} {lastName}</Text>
+            </View>
 
             <View style={styles.QRContainer}>
                 <QRCode
                     value={uid}
                     size={300}
-                    color='black'
+                    color='#3969b7'
                     backgroundColor='#fff'
                     logo={logoFromFile}
                 />
-
             </View>
-            <Text style={{ ...styles.text, marginTop: 10, }}>Code: {uid}</Text>
-            {/* <Text style={{ ...styles.text }}>Email: {email}</Text> */}
-        </View>
 
+            <Text style={styles.codeText}>Code: {uid}</Text>
+            {/* Uncomment this line if you want to display the email */}
+            {/* <Text style={styles.codeText}>Email: {email}</Text> */}
+        </View>
     );
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -42,11 +42,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         alignItems: 'center',
         justifyContent: 'center',
-    }, text: {
+    },
+    titleContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
         marginBottom: 10,
-        fontSize: 16,
+    },
+    nameContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+    },
+    titleText: {
+        fontSize: 40,
         fontWeight: 'bold',
-        color: '#3969b7'
+        color: '#2ecc71',
+        marginLeft: 8, // Add left margin to align text with the icon
+    },
+    nameText: {
+        fontSize: 24,
+        color: '#666',
+        marginLeft: 8, // Add left margin to align text with the icon
     },
     QRContainer: {
         alignItems: 'center',
@@ -57,15 +73,22 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
-            height: 1,
+            height: 2,
         },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
-        elevation: 3,
-        marginRight: 20,
-        marginLeft: 20,
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+        elevation: 6,
         width: 340,
         height: 340,
-    }
+        marginBottom: 20,
+    },
+    codeText: {
+        fontSize: 18,
+        color: '#666',
+    },
+    icon: {
+        marginRight: 8,
+    },
 });
+
 export default UserQR;
