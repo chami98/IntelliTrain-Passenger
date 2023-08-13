@@ -40,8 +40,8 @@ const TrackTrain = ({ route, navigation }) => {
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
                 screen: 'MapContainer',
                 params: {
-                    latitude: 8.3444,
-                    longitude: 80.4108,
+                    latitude: 9.8147,
+                    longitude: 80.0482,
                     title: "Uttara Devi / උත්තරා දේවි"
                 }
             })}>
@@ -56,6 +56,16 @@ const TrackTrain = ({ route, navigation }) => {
                 }
             })}>
                 <Text style={styles.buttonText}>Galu Kumari / ගාලු කුමාරි</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AppStackNavigator', {
+                screen: 'MapContainer',
+                params: {
+                    latitude: 8.3444,
+                    longitude: 80.4108,
+                    title: "Rajarata Rajini / රජරට රැජිණි"
+                }
+            })}>
+                <Text style={styles.buttonText}>Rajarata Rajini / රජරට රැජිණි</Text>
             </TouchableOpacity>
         </View>
     )
