@@ -13,7 +13,6 @@ const LostItems = () => {
         // Add more items with train names or train stations in Sri Lanka as needed
     ];
 
-
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Lost Items</Text>
@@ -39,35 +38,47 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: '#f8f8f8',
+        backgroundColor: '#f0f0f0',
     },
     title: {
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#3969b7',
         marginBottom: 20,
+        textAlign: 'center',
     },
     itemContainer: {
-        backgroundColor: '#fff',
+        backgroundColor: '#ffffff',
         padding: 20,
-        marginBottom: 10,
-        borderRadius: 10,
+        marginBottom: 20,
+        borderRadius: 15,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.3,
+        shadowRadius: 4,
+        elevation: 6,
     },
     itemName: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         color: '#333',
     },
     itemDescription: {
-        fontSize: 16,
+        fontSize: 18,
         color: '#666',
+        marginTop: 10,
     },
     itemLocation: {
-        fontSize: 16,
+        fontSize: 18,
         color: '#666',
+        marginTop: 10,
     },
     itemDate: {
-        fontSize: 16,
+        fontSize: 18,
         color: '#666',
+        marginTop: 10,
     },
 });
