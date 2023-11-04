@@ -7,7 +7,7 @@ const LostAndFound = ({ navigation }) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Lost & Found</Text>
-                <Image source={require('../assets/lost3.gif')} style={{ width: 280, height: 280, marginTop: 35 }} />
+                <Image source={require('../assets/lost3.gif')} style={styles.image} />
             </View>
             <View style={styles.buttonContainer}>
                 <View style={styles.row}>
@@ -23,7 +23,8 @@ const LostAndFound = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                        onPress={() => navigation.navigate('AppStackNavigator', { screen: 'SubmitItem' })}>
                         <Icon name="ios-add-circle" size={60} color="#3969b7" />
                         <Text style={styles.buttonText}>Submit Lost / Found Item</Text>
                     </TouchableOpacity>
@@ -52,9 +53,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        fontSize: 25,
+        fontSize: 30,
         fontWeight: 'bold',
         color: '#3969b7',
+        marginBottom: 20,
+    },
+    image: {
+        width: 280,
+        height: 280,
+        marginTop: 35,
+        borderRadius: 140,
     },
     buttonContainer: {
         flex: 1,
@@ -69,16 +77,16 @@ const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
         backgroundColor: '#fff',
-        borderRadius: 10,
+        borderRadius: 15,
         padding: 20,
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
-            height: 1,
+            height: 2,
         },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
-        elevation: 3,
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
         marginRight: 20,
         marginLeft: 20,
         width: 150,
@@ -86,7 +94,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         marginTop: 10,
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#3969b7',
         textAlign: 'center',
