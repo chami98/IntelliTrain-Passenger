@@ -9,6 +9,7 @@ import SendNews from '../screens/SendNews';
 import LostAndFound from '../screens/LostAndFound';
 import TrainDetails from '../screens/TrainDetails';
 import MapContainer from '../screens/MapContainer';
+import LostItems from '../screens/LostItems';
 
 const AppStackNavigator = () => {
     const Stack = createNativeStackNavigator();
@@ -24,6 +25,7 @@ const AppStackNavigator = () => {
                 <Stack.Screen options={{ headerShown: false }} name='LiveUpdates' component={LiveUpdates} />
                 <Stack.Screen options={{ headerShown: false }} name='SendNews' component={SendNews} />
                 <Stack.Screen options={{ headerShown: false }} name='LostAndFound' component={LostAndFound} />
+                <Stack.Screen options={{ headerShown: false }} name='LostItems' component={LostItems} />
             </Stack.Navigator>
         </>
     )

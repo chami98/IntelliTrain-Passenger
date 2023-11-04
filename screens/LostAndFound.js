@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const LostAndFound = () => {
+const LostAndFound = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -11,7 +11,8 @@ const LostAndFound = () => {
             </View>
             <View style={styles.buttonContainer}>
                 <View style={styles.row}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                        onPress={() => navigation.navigate('AppStackNavigator', { screen: 'LostItems' })}>
                         <Icon name="ios-search" size={60} color="#3969b7" />
                         <Text style={styles.buttonText}>Lost Items</Text>
                     </TouchableOpacity>
@@ -23,7 +24,7 @@ const LostAndFound = () => {
                 <View style={styles.row}>
                     <TouchableOpacity style={styles.button}>
                         <Icon name="ios-add-circle" size={60} color="#3969b7" />
-                        <Text style={styles.buttonText}>Submit Lost Item</Text>
+                        <Text style={styles.buttonText}>Submit Lost / Found Item</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button}>
                         <Icon name="ios-information-circle" size={60} color="#3969b7" />
