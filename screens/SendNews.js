@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { TouchableOpacity } from 'react-native';
 import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 const SendNews = () => {
     const [title, setTitle] = useState('');
@@ -16,6 +19,7 @@ const SendNews = () => {
 
     return (
         <View style={styles.container}>
+            <Icon name="newspaper-o" size={38} color="#3969b7" style={styles.titleIcon} />
             <Text style={styles.title}>Send News</Text>
             <TextInput
                 style={styles.input}
@@ -43,12 +47,12 @@ const SendNews = () => {
                 onChangeText={(text) => setName(text)}
                 value={name}
             />
-            <Button
-                title="Send"
+            <TouchableOpacity
+                style={styles.sendButton} // Use TouchableOpacity for the button
                 onPress={handleSendNews}
-                color="#3969b7"
-                style={styles.sendButton}
-            />
+            >
+                <Text style={styles.buttonText}>Send</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         fontSize: 16,
         backgroundColor: '#fff',
-        borderRadius: 5,
+        borderRadius: 15,
     },
     textArea: {
         width: '80%',
@@ -86,12 +90,19 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         fontSize: 16,
         backgroundColor: '#fff',
-        borderRadius: 5,
+        borderRadius: 15,
     },
     sendButton: {
         backgroundColor: '#3969b7',
-        padding: 10,
-        borderRadius: 5,
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingRight: 80,
+        paddingLeft: 80,
+        borderRadius: 15,
+    },
+    buttonText: {
+        color: "white",
+        fontSize: 18
     },
 });
 
