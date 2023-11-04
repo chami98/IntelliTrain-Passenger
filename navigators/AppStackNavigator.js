@@ -11,6 +11,7 @@ import TrainDetails from '../screens/TrainDetails';
 import MapContainer from '../screens/MapContainer';
 import LostItems from '../screens/LostItems';
 import FoundItems from '../screens/FoundItems';
+import SubmitItem from '../screens/SubmitItem';
 
 const AppStackNavigator = () => {
     const Stack = createNativeStackNavigator();
@@ -28,6 +29,7 @@ const AppStackNavigator = () => {
                 <Stack.Screen options={{ headerShown: false }} name='LostAndFound' component={LostAndFound} />
                 <Stack.Screen options={{ headerShown: false }} name='LostItems' component={LostItems} />
                 <Stack.Screen options={{ headerShown: false }} name='FoundItems' component={FoundItems} />
+                <Stack.Screen options={{ headerShown: false }} name='SubmitItem' component={SubmitItem} />
             </Stack.Navigator>
         </>
     )
