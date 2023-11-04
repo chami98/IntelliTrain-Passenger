@@ -7,7 +7,7 @@ const LostAndFound = ({ navigation }) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Lost & Found</Text>
-                <Image source={require('../assets/lost.gif')} style={{ width: 200, height: 200, marginTop: 35 }} />
+                <Image source={require('../assets/lost3.gif')} style={{ width: 280, height: 280, marginTop: 35 }} />
             </View>
             <View style={styles.buttonContainer}>
                 <View style={styles.row}>
@@ -16,7 +16,8 @@ const LostAndFound = ({ navigation }) => {
                         <Icon name="ios-search" size={60} color="#3969b7" />
                         <Text style={styles.buttonText}>Lost Items</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                        onPress={() => navigation.navigate('AppStackNavigator', { screen: 'FoundItems' })}>
                         <Icon name="ios-eye" size={60} color="#3969b7" />
                         <Text style={styles.buttonText}>Found Items</Text>
                     </TouchableOpacity>
