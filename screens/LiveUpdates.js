@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Import an icon library of your choice
 
 const LiveUpdates = () => {
     return (
@@ -7,47 +8,82 @@ const LiveUpdates = () => {
             <Text style={{ ...styles.title, fontSize: 28, textAlign: 'center', marginTop: 20 }}>Live Updates</Text>
 
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
-                <View style={styles.container}>
-                    <Text style={styles.title}>Sagarika </Text>
-                    <View style={styles.statusContainer}>
-                        <Text style={styles.statusText}>Delayed due to maintenance work</Text>
+                {trainUpdates.map((train, index) => (
+                    <View style={styles.container} key={index}>
+                        <View style={styles.header}>
+                            <Text style={styles.title}>{train.name}</Text>
+                            {train.statusIcon && (
+                                <Icon name={train.statusIcon.name} size={20} color={train.statusIcon.color} />
+                            )}
+                        </View>
+                        <View style={styles.statusContainer}>
+                            <Icon name={train.statusIcon.name} size={20} color={train.statusIcon.color} />
+                            <Text style={{ ...styles.statusText, color: train.statusColor }}>
+                                {train.status}
+                            </Text>
+                        </View>
+                        <Text style={styles.detailsText}>{train.details}</Text>
                     </View>
-                    <Text style={styles.detailsText}>Expect a delay of approximately 45 minutes.</Text>
-                </View>
-                <View style={styles.container}>
-                    <Text style={styles.title}>Ruhunu Kumari </Text>
-                    <View style={styles.statusContainer}>
-                        <Text style={styles.statusText}>Running on time</Text>
-                    </View>
-                    <Text style={styles.detailsText}>No reported delays or issues.</Text>
-                </View>
-                <View style={styles.container}>
-                    <Text style={styles.title}>Yal Devi </Text>
-                    <View style={styles.statusContainer}>
-                        <Text style={styles.statusText}>Running on time</Text>
-                    </View>
-                    <Text style={styles.detailsText}>No reported delays or issues.</Text>
-                </View>
-                <View style={styles.container}>
-                    <Text style={styles.title}>Udarata Menike </Text>
-                    <View style={styles.statusContainer}>
-                        <Text style={styles.statusText}>Slight delay due to weather conditions</Text>
-                    </View>
-                    <Text style={styles.detailsText}>Expect a delay of approximately 15 minutes.</Text>
-                </View>
-                <View style={styles.container}>
-                    <Text style={styles.title}>Rajarata Rajina </Text>
-                    <View style={styles.statusContainer}>
-                        <Text style={styles.statusText}>Delayed due to a technical issue</Text>
-                    </View>
-                    <Text style={styles.detailsText}>Expect a delay of approximately 20 minutes.</Text>
-                </View>
+                ))}
             </ScrollView>
         </View>
     );
 }
 
-export default LiveUpdates;
+const trainUpdates = [
+
+    {
+        name: 'Ruhunu Kumari | රුහුණු කුමාරි',
+        status: 'Running on time',
+        details: 'No reported delays or issues',
+        statusIcon: { name: 'check-circle', color: 'green' },
+        statusColor: 'green',
+    },
+    {
+        name: 'Yal Devi | යාල් දේවි',
+        status: 'Running on time',
+        details: 'No reported delays or issues',
+        statusIcon: { name: 'check-circle', color: 'green' },
+        statusColor: 'green',
+    },
+    {
+        name: 'Udarata Menike | උඩරට මැණිකේ',
+        status: 'Slight delay due to weather conditions',
+        details: 'Expect a delay of approximately 15 minutes',
+        statusIcon: { name: 'exclamation-circle', color: 'red' },
+        statusColor: 'red',
+    },
+    {
+        name: 'Vavuniya Express | වවුනියා එක්ස්ප්‍රස්',
+        status: 'Running on time',
+        details: 'No reported delays or issues',
+        statusIcon: { name: 'check-circle', color: 'green' },
+        statusColor: 'green',
+    },
+    {
+        name: 'Sagarika | සාගරිකා',
+        status: 'Delayed due to maintenance work',
+        details: 'Expect a delay of approximately 45 minutes',
+        statusIcon: { name: 'exclamation-circle', color: 'red' },
+        statusColor: 'red',
+    },
+
+    {
+        name: 'Rajarata Rajina | රජරට රැජිණ',
+        status: 'Delayed due to a technical issue',
+        details: 'Expect a delay of approximately 20 minutes',
+        statusIcon: { name: 'exclamation-circle', color: 'red' },
+        statusColor: 'red',
+    },
+    {
+        name: 'Badulla Night Mail | බදුල්ල නයිට් මෙල්',
+        status: 'Delayed due to track maintenance',
+        details: 'Expect a delay of approximately 30 minutes',
+        statusIcon: { name: 'exclamation-circle', color: 'red' },
+        statusColor: 'red',
+    },
+
+];
 
 const styles = StyleSheet.create({
     scrollViewContent: {
@@ -63,10 +99,15 @@ const styles = StyleSheet.create({
         shadowRadius: 6,
         shadowOpacity: 1,
     },
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
     title: {
         color: '#3969b7',
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 18,
         marginBottom: 10,
     },
     statusContainer: {
@@ -75,22 +116,14 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     statusText: {
-        color: 'red',
-        fontSize: 18,
-        marginRight: 10,
+        fontSize: 15,
+        marginLeft: 5,
     },
     detailsText: {
         color: '#333',
-        fontSize: 16,
+        fontSize: 15,
         marginBottom: 10,
-    },
-    alternativeRouteText: {
-        color: 'green',
-        fontSize: 16,
-        marginBottom: 10,
-    },
-    emergencyContactText: {
-        color: '#333',
-        fontSize: 16,
     },
 });
+
+export default LiveUpdates;
