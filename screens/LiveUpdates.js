@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'; // Import an icon libr
 const LiveUpdates = () => {
     return (
         <View>
-            <Text style={{ ...styles.title, fontSize: 28, textAlign: 'center', marginTop: 20 }}>Live Updates</Text>
+            <Text style={{ ...styles.title, fontSize: 25, marginTop: 20, marginBottom: 0, marginLeft: 20 }}>Live Updates</Text>
 
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
                 {trainUpdates.map((train, index) => (
@@ -76,7 +76,7 @@ const trainUpdates = [
         statusColor: 'red',
     },
     {
-        name: 'Badulla Night Mail | බදුල්ල නයිට් මෙල්',
+        name: 'Badulla Night Mail | බදුල්ල නයිට් මේල්',
         status: 'Delayed due to track maintenance',
         details: 'Expect a delay of approximately 30 minutes',
         statusIcon: { name: 'exclamation-circle', color: 'red' },
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 10,
         padding: 20,
-        marginBottom: 20,
+        marginBottom: 12,
         shadowColor: 'rgba(0, 0, 0, 0.1)',
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 6,
