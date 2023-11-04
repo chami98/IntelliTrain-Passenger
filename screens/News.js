@@ -9,7 +9,7 @@ const News = () => {
             title: 'New Rail Link to Connect Northern and Southern Sri Lanka',
             description: 'A new rail link project aims to connect the northern and southern regions of Sri Lanka...',
             date: '2023-08-02',
-            source: 'Sri Lanka Railways Gazette',
+            source: 'Chamikara Mendis',
             icon: 'ios-train'
         },
         {
@@ -17,7 +17,7 @@ const News = () => {
             title: 'Sri Lanka Railways Celebrates 150 Years of Service',
             description: 'The nation celebrates a century and a half of railway operations in Sri Lanka...',
             date: '2023-08-01',
-            source: 'Sri Lanka Rail Heritage',
+            source: 'Nirosha Wedasinghe',
             icon: 'ios-ribbon'
         },
         {
@@ -25,7 +25,7 @@ const News = () => {
             title: 'Modernization Plans for Colombo\'s Main Railway Station',
             description: 'Colombo\'s main railway station set to undergo modernization with advanced facilities...',
             date: '2023-07-31',
-            source: 'Colombo Railway Times',
+            source: 'Chamikara Mendis',
             icon: 'ios-build'
         },
         {
@@ -33,7 +33,7 @@ const News = () => {
             title: 'Sri Lanka Railways Launches New Luxury Train Service',
             description: 'A new luxury train service offers passengers a premium travel experience...',
             date: '2023-07-30',
-            source: 'Sri Lanka Travel Express',
+            source: 'Pathum Kathriarachchi',
             icon: 'ios-star'
         },
         {
@@ -41,15 +41,15 @@ const News = () => {
             title: 'Railway Safety Campaign Launched to Educate Commuters',
             description: 'A safety awareness campaign aims to educate railway commuters about safe travel practices...',
             date: '2023-07-29',
-            source: 'Sri Lanka Rail Safety Initiative',
+            source: 'Nirosha Wedasinghe',
             icon: 'ios-warning'
         },
         {
             id: '17',
             title: 'Sri Lanka Railways to Introduce Online Ticket Booking System',
             description: 'Passengers will soon be able to conveniently book train tickets online...',
-            date: '2023-07-28',
-            source: 'Sri Lanka Rail Tech News',
+            date: '2023-0728',
+            source: 'Pradeepa Bandara',
             icon: 'ios-globe'
         },
         {
@@ -57,7 +57,7 @@ const News = () => {
             title: 'Sri Lanka Railways Launches Eco-Friendly Trains',
             description: 'New environmentally-friendly trains are introduced to promote sustainable travel...',
             date: '2023-07-26',
-            source: 'Green Railways Sri Lanka',
+            source: 'Deepika Jayawardena',
             icon: 'ios-leaf'
         },
         {
@@ -65,7 +65,7 @@ const News = () => {
             title: 'Heritage Train Ride to Explore Cultural Sites',
             description: 'A heritage train ride offers passengers a journey through Sri Lanka\'s cultural landmarks...',
             date: '2023-07-25',
-            source: 'Sri Lanka Cultural Explorer',
+            source: 'Ashen Weerasinghe',
             icon: 'ios-compass'
         },
         {
