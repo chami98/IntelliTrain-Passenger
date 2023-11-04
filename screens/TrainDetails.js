@@ -18,7 +18,7 @@ const TrainDetails = ({ route }) => {
 
 
     useEffect(() => {
-        axios.get('https://us-central1-sierra-80ddd.cloudfunctions.net/api/trains', {
+        axios.get('https://9503-2407-c00-c003-73c1-6816-e291-d899-7673.ngrok-free.app/trains', {
             params: {
                 startStaion: startStationValue,
                 endStation: endStationValue,
