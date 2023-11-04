@@ -18,8 +18,9 @@ const SendNews = () => {
 
     return (
         <View style={styles.container}>
-            <Icon name="newspaper-o" size={38} color="#3969b7" style={styles.titleIcon} />
+            {/* <Icon name="newspaper-o" size={38} color="#3969b7" style={styles.titleIcon} /> */}
             <Text style={styles.title}>Send News</Text>
+            <Image source={require('../assets/train-gif.gif')} style={{ width: 280, height: 280, marginBottom: 15 }} />
             <TextInput
                 style={styles.input}
                 placeholder="Title"
