@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const LostAndFound = () => {
@@ -7,7 +7,7 @@ const LostAndFound = () => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.text}>Lost & Found</Text>
-                <Icon name="ios-search" size={30} color="#3969b7" />
+                <Image source={require('../assets/lost.gif')} style={{ width: 200, height: 200, marginTop: 35 }} />
             </View>
             <View style={styles.buttonContainer}>
                 <View style={styles.row}>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        fontSize: 38,
+        fontSize: 25,
         fontWeight: 'bold',
         color: '#3969b7',
     },

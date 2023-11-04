@@ -3,7 +3,6 @@ import { TouchableOpacity } from 'react-native';
 import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 const SendNews = () => {
     const [title, setTitle] = useState('');
     const [news, setNews] = useState('');
@@ -48,7 +47,7 @@ const SendNews = () => {
                 value={name}
             />
             <TouchableOpacity
-                style={styles.sendButton} // Use TouchableOpacity for the button
+                style={styles.sendButton}
                 onPress={handleSendNews}
             >
                 <Text style={styles.buttonText}>Send</Text>
@@ -63,6 +62,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#f1f1f1',
+        padding: 20,
     },
     title: {
         color: '#3969b7',
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     input: {
-        width: '80%',
+        width: '100%',
         height: 40,
         borderColor: '#ccc',
         borderWidth: 1,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
     textArea: {
-        width: '80%',
+        width: '100%',
         height: 120,
         borderColor: '#ccc',
         borderWidth: 1,
