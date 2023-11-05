@@ -28,7 +28,8 @@ const LostAndFound = ({ navigation }) => {
                         <Icon name="ios-add-circle" size={60} color="#3969b7" />
                         <Text style={styles.buttonText}>Submit Lost / Found Item</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                        onPress={() => navigation.navigate('AppStackNavigator', { screen: 'Instructions' })}>
                         <Icon name="ios-information-circle" size={60} color="#3969b7" />
                         <Text style={styles.buttonText}>Instructions</Text>
                     </TouchableOpacity>

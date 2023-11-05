@@ -12,6 +12,7 @@ import MapContainer from '../screens/MapContainer';
 import LostItems from '../screens/LostItems';
 import FoundItems from '../screens/FoundItems';
 import SubmitItem from '../screens/SubmitItem';
+import Instructions from '../screens/Instructions';
 
 const AppStackNavigator = () => {
     const Stack = createNativeStackNavigator();
@@ -30,6 +31,7 @@ const AppStackNavigator = () => {
                 <Stack.Screen options={{ headerShown: false }} name='LostItems' component={LostItems} />
                 <Stack.Screen options={{ headerShown: false }} name='FoundItems' component={FoundItems} />
                 <Stack.Screen options={{ headerShown: false }} name='SubmitItem' component={SubmitItem} />
+                <Stack.Screen options={{ headerShown: false }} name='Instructions' component={Instructions} />
             </Stack.Navigator>
         </>
     )
