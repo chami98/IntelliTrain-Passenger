@@ -35,6 +35,9 @@ const LostAndFound = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </View>
+            <View style={styles.footer}>
+                <Text style={styles.footerText}>© {new Date().getFullYear()} Chamikara Mendis</Text>
+            </View>
         </View>
     );
 };
@@ -99,5 +102,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#3969b7',
         textAlign: 'center',
+    },
+    footer: {
+        padding: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderTopWidth: 1,
+        borderTopColor: '#ddd',
+    },
+    footerText: {
+        fontSize: 16,
+        color: '#777',
     },
 });
