@@ -119,6 +119,9 @@ const News = () => {
                     </View>
                 ))}
             </ScrollView>
+            <View style={styles.footer}>
+                <Text style={styles.footerText}>© {new Date().getFullYear()} Chamikara Mendis</Text>
+            </View>
         </View>
     );
 };
@@ -170,6 +173,17 @@ const styles = StyleSheet.create({
     newsSourceDate: {
         fontSize: 12,
         color: '#888',
+    },
+    footer: {
+        padding: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderTopWidth: 1,
+        borderTopColor: '#ddd',
+    },
+    footerText: {
+        fontSize: 16,
+        color: '#777',
     },
 });
 
