@@ -53,6 +53,9 @@ const SendNews = () => {
             >
                 <Text style={styles.buttonText}>Send</Text>
             </TouchableOpacity>
+            <View style={styles.footer}>
+                <Text style={styles.footerText}>© {new Date().getFullYear()} Chamikara Mendis</Text>
+            </View>
         </View>
     );
 };
@@ -104,6 +107,17 @@ const styles = StyleSheet.create({
     buttonText: {
         color: "white",
         fontSize: 18
+    },
+    footer: {
+        padding: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderTopWidth: 1,
+        borderTopColor: '#ddd',
+    },
+    footerText: {
+        fontSize: 16,
+        color: '#777',
     },
 });
 
