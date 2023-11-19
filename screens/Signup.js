@@ -48,8 +48,12 @@ const Signup = () => {
             });
     }
 
-    return <Center w="100%">
+    return
+    // Center component to center its children
+    <Center w="100%">
+        {/* Box component to hold the form */}
         <Box safeArea p="2" w="90%" maxW="290" py="8">
+            {/* Heading components for the title and subtitle */}
             <Heading size="lg" color="coolGray.800" _dark={{
                 color: "warmGray.50"
             }} fontWeight="semibold">
@@ -60,7 +64,9 @@ const Signup = () => {
             }} fontWeight="medium" size="xs">
                 Sign up to continue!
             </Heading>
+            {/* VStack component to vertically stack the form fields */}
             <VStack space={3} mt="5">
+                {/* FormControl components for each input field */}
                 <FormControl>
                     <FormControl.Label>First Name</FormControl.Label>
                     <Input onChangeText={(text) => setFirstName(text)} />
@@ -85,6 +91,7 @@ const Signup = () => {
                     <FormControl.Label>Confirm Password</FormControl.Label>
                     <Input type="password" onChangeText={(text) => setPassword(text)} />
                 </FormControl>
+                {/* Button component to submit the form */}
                 <Button mt="2" colorScheme="indigo" onPress={handleSignUp} >
                     Sign up
                 </Button>
