@@ -23,15 +23,27 @@ const Signup = () => {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
+    // Function to handle user sign up
     const handleSignUp = () => {
+        // Use Firebase's createUserWithEmailAndPassword function to create a new user
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const data = { "token": userCredential.user.accessToken, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, }
+                // Prepare the data to be sent to the backend
+                const data = {
+                    "token": userCredential.user.accessToken,
+                    "firstName": firstName,
+                    "lastName": lastName,
+                    "phoneNumber": phoneNumber,
+                }
+                // Send a POST request to the signup endpoint of the backend
                 axios.post(`${baseURL}signup`, data);
+                // Navigate to the AppTabNavigator screen, passing the email as a parameter
                 navigation.navigate('AppTabNavigator', { "email": email })
             })
             .catch((error) => {
+                // Log any errors to the console
                 console.log(error)
+                // Show an alert with the error message
                 Alert.alert(error.message)
             });
     }
