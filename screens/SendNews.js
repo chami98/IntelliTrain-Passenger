@@ -59,8 +59,8 @@ const SendNews = () => {
         </View>
     );
 };
-
 const styles = StyleSheet.create({
+    // Container for the entire screen
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -68,12 +68,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#f1f1f1',
         padding: 20,
     },
+    // Style for the title text
     title: {
         color: '#3969b7',
         fontWeight: 'bold',
         fontSize: 30,
         marginBottom: 20,
     },
+    // Style for the input fields
     input: {
         width: '100%',
         height: 40,
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 15,
     },
+    // Style for the text area field
     textArea: {
         width: '100%',
         height: 120,
@@ -96,6 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 15,
     },
+    // Style for the send button
     sendButton: {
         backgroundColor: '#3969b7',
         paddingTop: 10,
@@ -104,10 +108,12 @@ const styles = StyleSheet.create({
         paddingLeft: 80,
         borderRadius: 15,
     },
+    // Style for the send button text
     buttonText: {
         color: "white",
         fontSize: 18
     },
+    // Style for the footer
     footer: {
         padding: 10,
         justifyContent: 'center',
@@ -115,6 +121,7 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderTopColor: '#ddd',
     },
+    // Style for the footer text
     footerText: {
         fontSize: 16,
         color: '#777',
