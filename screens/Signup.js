@@ -24,15 +24,20 @@ const Signup = () => {
     const auth = getAuth(app);
 
     // Function to handle user sign up
+    // Function to handle user sign up
     const handleSignUp = () => {
         // Use Firebase's createUserWithEmailAndPassword function to create a new user
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Prepare the data to be sent to the backend
                 const data = {
+                    // The user's access token
                     "token": userCredential.user.accessToken,
+                    // The user's first name
                     "firstName": firstName,
+                    // The user's last name
                     "lastName": lastName,
+                    // The user's phone number
                     "phoneNumber": phoneNumber,
                 }
                 // Send a POST request to the signup endpoint of the backend
