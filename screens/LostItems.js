@@ -13,17 +13,29 @@ const LostItems = () => {
         // Add more items with train names or train stations in Sri Lanka as needed
     ];
 
+    // Return the JSX to render
     return (
+        // Use the View component as a container
         <View style={styles.container}>
+            // Display the title
             <Text style={styles.title}>Lost Items</Text>
+            // Use the FlatList component to display a list of lost items
             <FlatList
+                // The data prop is the array of lost items
                 data={lostItems}
+                // The keyExtractor prop is a function that returns a unique identifier for each item
                 keyExtractor={(item) => item.id}
+                // The renderItem prop is a function that returns the JSX to render for each item
                 renderItem={({ item }) => (
+                    // Use the View component as a container for each item
                     <View style={styles.itemContainer}>
+                        // Display the name of the item
                         <Text style={styles.itemName}>{item.name}</Text>
+                        // Display the description of the item
                         <Text style={styles.itemDescription}>{item.description}</Text>
+                        // Display the location of the item
                         <Text style={styles.itemLocation}>Location: {item.location}</Text>
+                        // Display the date of the item
                         <Text style={styles.itemDate}>Date: {item.date}</Text>
                     </View>
                 )}
