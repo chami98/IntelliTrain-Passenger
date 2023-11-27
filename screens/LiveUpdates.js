@@ -86,9 +86,11 @@ const trainUpdates = [
 ];
 
 const styles = StyleSheet.create({
+    // Style for the content inside the scroll view
     scrollViewContent: {
         padding: 20,
     },
+    // Style for the main container
     container: {
         backgroundColor: '#fff',
         borderRadius: 10,
@@ -99,26 +101,31 @@ const styles = StyleSheet.create({
         shadowRadius: 6,
         shadowOpacity: 1,
     },
+    // Style for the header container
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
+    // Style for the title text
     title: {
         color: '#3969b7',
         fontWeight: 'bold',
         fontSize: 18,
         marginBottom: 10,
     },
+    // Style for the status container
     statusContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10,
     },
+    // Style for the status text
     statusText: {
         fontSize: 15,
         marginLeft: 5,
     },
+    // Style for the details text
     detailsText: {
         color: '#333',
         fontSize: 15,
