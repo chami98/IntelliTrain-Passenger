@@ -100,10 +100,15 @@ const Signup = () => {
     </Center>;
 };
 
+// Export the default anonymous function
 export default () => {
+    // Return the JSX to render
     return (
+        // Use the NativeBaseProvider for consistent styling across different platforms
         <NativeBaseProvider>
+            // Use the Center component to center the Signup component
             <Center flex={1} px="3">
+                // Render the Signup component
                 <Signup />
             </Center>
         </NativeBaseProvider>
