@@ -60,16 +60,20 @@ const UserAccount = ({ navigation, route }) => {
 export default UserAccount
 
 const styles = StyleSheet.create({
+    // Container style for the entire screen
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    }, textContainer: {
+    },
+    // Container style for the main text section
+    textContainer: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#fff',
         borderRadius: 10,
         padding: 20,
+        // Box shadow properties
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
@@ -82,21 +86,27 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         width: 340,
         height: 500,
-
-    }, text: {
+    },
+    // Style for the main text
+    text: {
         fontSize: 25,
         marginBottom: 5
     },
+    // Style for the title text
     titleText: {
         marginBottom: 10,
         fontSize: 33,
         fontWeight: 'bold',
         color: "#3969b7"
-    }, image: {
+    },
+    // Style for images
+    image: {
         height: 200,
         width: 200,
-    }, imageView: {
+    },
+    // Container style for the image view
+    imageView: {
         justifyContent: 'center',
         alignItems: 'center'
     }
-})
+});
