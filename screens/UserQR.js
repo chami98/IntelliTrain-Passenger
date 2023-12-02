@@ -37,39 +37,46 @@ const UserQR = ({ route }) => {
 }
 
 const styles = StyleSheet.create({
+    // Container style for the entire screen
     container: {
         flex: 1,
         backgroundColor: '#f2f2f2',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    // Container style for the title section
     titleContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10,
     },
+    // Container style for the name section
     nameContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 20,
     },
+    // Style for the title text
     titleText: {
         fontSize: 40,
         fontWeight: 'bold',
         color: '#2ecc71',
         marginLeft: 8, // Add left margin to align text with the icon
     },
+    // Style for the name text
     nameText: {
         fontSize: 24,
         color: '#666',
         marginLeft: 8, // Add left margin to align text with the icon
     },
+    // Container style for the QR code section
     QRContainer: {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#fff',
         borderRadius: 10,
         padding: 20,
+        // Box shadow properties
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
@@ -82,13 +89,16 @@ const styles = StyleSheet.create({
         height: 340,
         marginBottom: 20,
     },
+    // Style for the QR code text
     codeText: {
         fontSize: 18,
         color: '#666',
     },
+    // Style for icons used in the component
     icon: {
         marginRight: 8,
     },
 });
+
 
 export default UserQR;
