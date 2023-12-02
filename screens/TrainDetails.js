@@ -81,11 +81,13 @@ const TrainDetails = ({ route }) => {
 export default TrainDetails
 
 const styles = StyleSheet.create({
+    // Container style for the entire screen
     container: {
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1
     },
+    // Style for the title text
     title: {
         textAlign: 'center',
         marginTop: 40,
@@ -93,11 +95,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#3969b7',
         fontWeight: 'bold'
-    }, spinner: {
+    },
+    // Style for the spinner (loading indicator)
+    spinner: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        // Use marginTop variable if it's defined elsewhere in your code
         marginTop: marginTop,
     },
-
-})
+});
