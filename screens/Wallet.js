@@ -67,38 +67,53 @@ const Wallet = ({ route }) => {
 export default Wallet
 
 const styles = StyleSheet.create({
+    // Container styling for the entire screen
     container: {
         flex: 1,
         alignItems: 'center'
     },
+    // Styling for the title text
     title: {
         fontSize: 31,
         marginTop: 100,
         color: '#3969b7',
         fontWeight: 'bold'
-    }, welcome: {
+    },
+    // Styling for welcome text
+    welcome: {
         fontSize: 19,
         color: '#3969b7'
-    }, textContainer: {
+    },
+    // Container styling for text elements
+    textContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-    }, image: {
+    },
+    // Styling for the main image
+    image: {
         marginTop: 60,
         height: 250,
         width: 250,
-    }, imageView: {
+    },
+    // Styling for the view containing the main image
+    imageView: {
         justifyContent: 'center',
         alignItems: 'center'
-    }, text: {
+    },
+    // Styling for general text elements
+    text: {
         fontSize: 20,
         marginBottom: 10,
         marginTop: 20
-    }, spinner: {
+    },
+    // Styling for a spinner/loading component
+    spinner: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    }, balanceText:
-    {
+    },
+    // Styling for a balance text element
+    balanceText: {
         backgroundColor: 'transparent',
         borderWidth: 1,
         borderColor: '#3969b7',
