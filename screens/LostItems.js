@@ -17,9 +17,7 @@ const LostItems = () => {
     return (
         // Use the View component as a container
         <View style={styles.container}>
-            // Display the title
             <Text style={styles.title}>Lost Items</Text>
-            // Use the FlatList component to display a list of lost items
             <FlatList
                 // The data prop is the array of lost items
                 data={lostItems}
@@ -29,13 +27,10 @@ const LostItems = () => {
                 renderItem={({ item }) => (
                     // Use the View component as a container for each item
                     <View style={styles.itemContainer}>
-                        // Display the name of the item
+
                         <Text style={styles.itemName}>{item.name}</Text>
-                        // Display the description of the item
                         <Text style={styles.itemDescription}>{item.description}</Text>
-                        // Display the location of the item
                         <Text style={styles.itemLocation}>Location: {item.location}</Text>
-                        // Display the date of the item
                         <Text style={styles.itemDate}>Date: {item.date}</Text>
                     </View>
                 )}
