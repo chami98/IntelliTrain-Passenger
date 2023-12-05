@@ -13,7 +13,6 @@ const SendNews = () => {
         console.log('Title:', title);
         console.log('News:', news);
         console.log('Date:', date);
-        console.log('Photos:', photos);
     };
 
     return (
