@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, Image } from 'react-native';
 
 const Instructions = () => {
     return (
