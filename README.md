@@ -1,8 +1,10 @@
-﻿# IntelliTrain-Passenger
+﻿# IntelliTrain-Passenger 🚆
  
-### Building With React Native
+### Building With React Native 🛠️
  
-Comprehensive App for managing railway passenger operations. It includes features such as QR code generation for passengers, a smart wallet for passengers, and travel history tracking. The system also allows Passengers to view the railway timetable, post notices in the "Lost and Found" section, view and send news feeds related to the railway,
+Comprehensive App for managing railway passenger operations. It includes features such as QR code generation for passengers, a smart wallet for passengers, and travel history tracking. The system also allows passengers to view the railway timetable, post notices in the "Lost and Found" section, view and send news feeds related to the railway,
+
+### SCREENSHOTS: (PLEASE WAIT UNTIL ALL GIFS HAVE FINISHED LOADING ) 📸
 
 <img src="https://github.com/chami98/IntelliTrain-Passenger/assets/68820649/fda3309d-1b07-4935-8eb9-e4a05fddbf79" alt="Image 15" width="200">
 <img src="https://github.com/chami98/IntelliTrain-Passenger/assets/68820649/cbb0293d-6b47-4915-a8c7-3b282881e58c" alt="Image 14" width="200">
@@ -20,7 +22,7 @@ Comprehensive App for managing railway passenger operations. It includes feature
 <img src="https://github.com/chami98/IntelliTrain-Passenger/assets/68820649/97ff655b-9aec-4784-9688-a39891539f5e" alt="Image 2" width="200">
 <img src="https://github.com/chami98/IntelliTrain-Passenger/assets/68820649/e0edfa12-16e0-48fb-95c5-d5d6e3c5a389" alt="Image 1" width="200">
 
-## Getting Started
+## Getting Started 🚀
 
 To run the project locally, follow these steps:
 
@@ -30,3 +32,12 @@ To run the project locally, follow these steps:
    git clone https://github.com/chami98/IntelliTrain-Passenger.git
    cd IntelliTrain-Passenger
 
+2. Install dependencies:
+
+   ```bash
+   npm install
+
+3. Run the application:
+
+   ```bash
+   npm start
