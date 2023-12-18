@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 const SendNews = () => {
     const [title, setTitle] = useState('');
@@ -17,7 +17,6 @@ const SendNews = () => {
 
     return (
         <View style={styles.container}>
-            {/* <Icon name="newspaper-o" size={38} color="#3969b7" style={styles.titleIcon} /> */}
             <Text style={styles.title}>Send News</Text>
             <Image source={require('../assets/train-gif.gif')} style={{ width: 280, height: 280, marginBottom: 15 }} />
             <TextInput

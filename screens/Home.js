@@ -1,7 +1,7 @@
 import React from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Home = ({ route, navigation }) => {
 
@@ -55,6 +55,7 @@ export default Home;
 
 
 const styles = StyleSheet.create({
+    // Style for the main container
     container: {
         marginTop: 25,
         flex: 1,
@@ -62,14 +63,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#f2f2f2',
     },
+    // Style for the text container
     textContainer: {
         alignItems: 'center',
     },
+    // Style for the app name text
     appName: {
         fontSize: 38,
         fontWeight: 'bold',
         color: '#3969b7'
     },
+    // Style for the slogan text
     slogan: {
         fontSize: 12,
         textAlign: 'center',
@@ -78,26 +82,25 @@ const styles = StyleSheet.create({
         color: '#3969b7',
         fontWeight: 'bold'
     },
+    // Style for the greeting text
     greeting: {
         fontSize: 22,
-        // backgroundColor: '#2ecc71',
-        // borderWidth: 1,
-        // borderColor: '#2ecc71',
-        // borderRadius: 30,
-        // padding: 15,
         color: '#2ecc71',
         fontWeight: 'bold',
     },
+    // Style for the button container
     buttonContainer: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
+    // Style for the row layout
     row: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 20,
     },
+    // Style for the button
     button: {
         alignItems: 'center',
         backgroundColor: '#fff',
@@ -116,6 +119,7 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150
     },
+    // Style for the button text
     buttonText: {
         marginTop: 10,
         fontSize: 16,

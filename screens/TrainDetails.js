@@ -18,7 +18,7 @@ const TrainDetails = ({ route }) => {
 
 
     useEffect(() => {
-        axios.get('https://c71d-2407-c00-c000-e4d4-f575-6641-10c1-3d22.ngrok-free.app/trains', {
+        axios.get('https://5a44-2402-d000-a500-345f-a945-9b58-65ea-a498.ngrok-free.app/trains', {
             params: {
                 startStaion: startStationValue,
                 endStation: endStationValue,
