@@ -34,11 +34,13 @@ const FoundItems = () => {
 export default FoundItems;
 
 const styles = StyleSheet.create({
+    // Style for the main container
     container: {
         flex: 1,
         padding: 20,
         backgroundColor: '#f8f8f8',
     },
+    // Style for the heading text
     heading: {
         fontSize: 24,
         fontWeight: 'bold',
@@ -46,9 +48,11 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         textAlign: 'center',
     },
+    // Style for the scroll view containing the items
     itemsScrollView: {
         marginTop: 10,
     },
+    // Style for each individual item
     item: {
         flexDirection: 'row',
         marginBottom: 15,
@@ -56,20 +60,24 @@ const styles = StyleSheet.create({
         borderBottomColor: '#E5E5E5',
         paddingBottom: 10,
     },
+    // Style for the content of each item
     itemContent: {
         flex: 1,
         paddingLeft: 10,
     },
+    // Style for the name of each item
     itemName: {
         fontSize: 18,
         fontWeight: 'bold',
         color: '#333',
     },
+    // Style for the description of each item
     itemDescription: {
         fontSize: 16,
         color: '#666',
         marginTop: 5,
     },
+    // Style for the location and date of each item
     itemLocationDate: {
         fontSize: 16,
         color: '#666',
