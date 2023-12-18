@@ -14,7 +14,7 @@ import axios from 'axios'
 
 const TimeTable = ({ navigation }) => {
     const [loading, setLoading] = useState(true);
-    const baseURL = 'https://2c56-2407-c00-4004-8a1-98cc-6c61-8847-9bbd.ngrok-free.app/';
+    const baseURL = 'https://5a44-2402-d000-a500-345f-a945-9b58-65ea-a498.ngrok-free.app/';
     const fetchData = () => {
         axios.get(`${baseURL}stations`).then(response => {
             const resData = response.data;
