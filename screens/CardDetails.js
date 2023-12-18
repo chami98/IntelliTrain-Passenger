@@ -86,17 +86,20 @@ const CardDetails = ({ amount, setAmount }) => {
 export default CardDetails;
 
 const styles = StyleSheet.create({
+    // Style for the main container
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
+    // Style for the title text
     title: {
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
     },
+    // Style for the input fields
     input: {
         height: 40,
         width: 300,
@@ -106,10 +109,12 @@ const styles = StyleSheet.create({
         padding: 10,
         marginBottom: 10,
     },
+    // Style for the error messages
     error: {
         color: 'red',
         marginBottom: 10,
     },
+    // Style for the button
     button: {
         backgroundColor: '#2196F3',
         padding: 10,
