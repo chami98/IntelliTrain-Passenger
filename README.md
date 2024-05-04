@@ -24,7 +24,7 @@ Comprehensive App for managing railway passenger operations. It includes feature
 
 ## Getting Started 🚀
 
-To run the project locally, follow these steps:
+To run the project locally, follow these steps
 
 1. Clone this repository:
 
