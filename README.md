@@ -1,4 +1,4 @@
-﻿# IntelliTrain-Passenger 🚆
+﻿# IntelliTrain-Passenger 
  
 ### Building With React Native 🛠️
  
