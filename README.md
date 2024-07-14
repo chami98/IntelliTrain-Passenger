@@ -22,7 +22,7 @@ Comprehensive App for managing railway passenger operations. It includes feature
 <img src="https://github.com/chami98/IntelliTrain-Passenger/assets/68820649/97ff655b-9aec-4784-9688-a39891539f5e" alt="Image 2" width="250">
 <img src="https://github.com/chami98/IntelliTrain-Passenger/assets/68820649/e0edfa12-16e0-48fb-95c5-d5d6e3c5a389" alt="Image 1" width="250">
 
-## Getting Started 🚀
+## Getting Started 
 
 To run the project locally, follow these steps:
 
